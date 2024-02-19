@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px 8px 20px;
+    border: 1px solid #D4E3FF;
+    border-radius: 46px;
+    input {
+        outline: none;
+        max-width: 80%;
+    }
+}
