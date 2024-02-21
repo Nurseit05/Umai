@@ -13,7 +13,7 @@ const arrayRoute = [
     {name: 'Кошелек', href: '/purse'},
     {name: 'Терминалы', href: '/terminals'},
     {name: 'Эквайринг', href: '/acquiring'},
-    {name: 'Ещё', img: '/Vector.svg', href: '/...'}
+    {name: 'Ещё', img: '/icons/vectorDown.svg', href: '/...'}
 ]
 
 const NavLeft = () => {

@@ -7,19 +7,18 @@ import clsx from 'clsx';
 
 interface Props  {
     title: string,
-    src?: string,
+    imgSrc?: string,
     subtitle?: string,
     desc?: string,
     className?: string,
     classText?: string,
     button?: string,
-    radius?: boolean,
-    color?: ButtonColor
+    roundButton?: boolean,
 }
 
 const InfoCards = ({
     className, classText, title, desc, 
-    subtitle, button, src, radius, color
+    subtitle, button, imgSrc, roundButton
 }: Props) => {
     return (
         <section className={clsx(s.container, className)}>
@@ -27,12 +26,12 @@ const InfoCards = ({
                 <div className={s.text}>
                     <p>{title}</p>
                     {subtitle && <span>{subtitle}</span>}
-                    {desc && <p>{desc}</p>}
+                    {desc && <span>{desc}</span>}
                 </div>
-                {button && <Button color={color} radius={radius} className={radius ? s.buttonRound : s.button} >{button}</Button>}
+                {button && <Button round={roundButton} className={roundButton ? s.buttonRound : s.button} >{button}</Button>}
             </div>
-            {src && <div>
-                    <img src={src} />
+            {imgSrc && <div>
+                    <img src={imgSrc} />
                 </div>
             }
         </section>

@@ -1,0 +1,45 @@
+.containerPhoneEmail {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+
+    p {
+        font-weight: 500;
+        font-size: 10px;
+        color: #838795;
+    }
+    span {
+        font-weight: 400;
+        font-size: 14px;
+        color: #474A53;
+    }
+
+    // img {
+    //     // height: 24px;
+    // }
+}
+
+.circleDiv {
+    width: 32px;
+    height: 32px;
+    border-radius: 86.09px; 
+    padding: 6px; 
+    background-color: #F1F2F3;
+}
+
+.blueDiv {
+    background-color: #0092A1;
+    width: 24px;
+    height: 24px;
+}
+
+
+.text {
+    color: #7893B0;
+    font-weight: 400;
+    font-size: 13px;
+    a {
+        text-decoration: underline;
+    }
+}

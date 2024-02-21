@@ -1,13 +1,19 @@
 import Cards from "./Cards";
 import Slide from "./Slide";
-import BannerCards from "./BannerCards";
+import CardMap from "./CardMap";
+import BannerCard from "./BannerCard";
+
+import s from './main.module.scss'
 
 export default function Main() {
     return (
-        <main >
+        <main className={s.main}>
             <Slide/>
-            <Cards/>
-            <BannerCards/>
+            <main className={s.wrapper}>
+                <Cards/>
+                <BannerCard/>
+                <CardMap/>
+            </main>
         </main>
     )
 }

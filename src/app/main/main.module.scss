@@ -1,0 +1,16 @@
+.main {
+    width: 100%;
+    min-width: 1300px;
+    background-color: #f7f7f8;
+    padding: 0 20px;
+
+    margin-inline: auto;
+
+    min-height: calc(100vh - 70px - 279px);
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}

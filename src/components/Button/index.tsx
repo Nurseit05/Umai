@@ -12,12 +12,12 @@ const colors: Record<ButtonColor, string> = {
 }
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     color?: ButtonColor,
-    radius?: boolean | string
+    round?: boolean | string
 }
 
 const Button = ({
     color = 'orange',
-    radius,
+    round,
     ...props
 }: Props)  => {
     const button = (
@@ -48,7 +48,7 @@ const Button = ({
         </button>
     )
 
-    return <>{radius ? buttonRound : button}</>
+    return <>{round ? buttonRound : button}</>
 }
 
 export default Button

@@ -2,18 +2,17 @@ import Button from '@/components/Button';
 import Image from 'next/image';
 import React from 'react';
 
-import s from './NavSearch.module.scss'
-import clsx from 'clsx';
+import s from './SearchButton.module.scss'
 
-const NavSearch = () => {
+const SearchButton = () => {
     return (
-        <div className={clsx('mx-auto container', s.wrapper)} >
+        <div className={s.wrapper} >
             <h2>Поиск по сайту</h2>
             <div className='flex gap-x-14' >
                 <section className='flex items-center gap-x-2' >
                     <div className={s.round} >
                         <Image
-                            src='/search.svg'
+                            src='/icons/search.svg'
                             width={15} height={15} alt='search'
                         />
                     <input type="text" placeholder='Я ищу' />
@@ -31,4 +30,4 @@ const NavSearch = () => {
     );
 };
 
-export default NavSearch;
+export default SearchButton;
