@@ -41,7 +41,7 @@ const Button = ({
         >
             {props.children}
             <div className={s.roundDiv}  >
-                <Image src='/rightButton.png' 
+                <Image src='/icons/rightButton.png' 
                     width={11} height={5.5} alt='>'
                 />
             </div>

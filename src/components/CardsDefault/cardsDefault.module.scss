@@ -1,0 +1,46 @@
+.container {
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 35px 30px 0 50px;
+    border-radius: 16px;
+    width: 100%;
+
+    @media screen and (min-width: 767px) and (max-width: 1023px) {
+        align-items: center;
+    }
+}
+  
+.text {
+    p {
+      font-weight: bold;
+      font-size: 28px;
+      color: #18191C;
+    }
+    span {
+        font-weight: normal;
+        font-size: 18px;
+        color: #474A53;
+    }
+}
+
+.wrapperText {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+  
+.buttonRound {
+    padding: 12px 6px 12px 20px;
+    justify-content: space-between;
+    color: #FFF;
+    width: 164px;
+    height: 44px;
+}
+
+.button {
+    padding: 12px 20px;
+    align-items: center;
+    color: #fff;
+    min-width: 190px;
+    height: auto;
+}

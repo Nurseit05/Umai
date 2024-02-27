@@ -1,38 +1,45 @@
 'use client'
-import { useState } from 'react';
-import styles from './Slider.module.css'; // Создайте файл стилей, например, Slider.module.css
 
-interface SliderProps {
-  items: React.ReactNode[];
-}
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const Slider: React.FC<SliderProps> = ({ items }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 
-    const handlePaginationClick = (index: number) => {
-        setCurrentIndex(index);
-    };
+import './styles.scss'
 
-    return (
-        <div className={styles.sliderContainer}>
-            <div className={styles.slideWrapper}>
-                {items.map((item, index) => (
-                    <div key={index} className={`${styles.slide} ${index === currentIndex ? styles.activeSlide : ''}`}>
-                        <img src={item} alt="" />
-                    </div>
-                ))}
+import { Navigation, Pagination } from 'swiper/modules';
+import Button from '../Button';
+import Image from 'next/image';
+
+export default function Slider() {
+
+  return (
+    <Swiper
+      navigation={true} pagination={{clickable: true}}
+      modules={[Navigation, Pagination]} 
+      loop={true}
+    >
+      <SwiperSlide className='BannerBg'>
+        <div className='wrapperText'>
+          <h1>Нас уже 46 000 кошелька!</h1>
+          <div className='wrapperSubtext' >
+            <div>
+              <p>Cумма открытия</p>
+              <span>0 сом!</span>
             </div>
-            <div className={styles.pagination}>
-                {items.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`${styles.paginationDot} ${index === currentIndex ? styles.activeDot : ''}`}
-                        onClick={() => handlePaginationClick(index)}
-                    />
-                ))}
+            <div>
+              <p>Срок открытия</p>
+              <span>1 рабочая неделя</span>
             </div>
+          </div>
+          <Button color='blue'>Открыть кошелек</Button>
         </div>
-    );
-};
-
-export default Slider;
+        <Image src='/CacheHand.svg' width={920} height={459} alt='' className='CacheHand' />
+      </SwiperSlide>
+      <SwiperSlide className='BannerBg'></SwiperSlide>
+      <SwiperSlide className='BannerBg'></SwiperSlide>
+      <SwiperSlide className='BannerBg'></SwiperSlide>
+    </Swiper>
+  );
+}

@@ -1,0 +1,116 @@
+/* SWIPER */
+
+.swiper {
+    width: 280px;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.swiper-wrapper {
+    height: 385px;
+
+    padding-top: 18px;
+}
+
+.swiper-slide {
+    padding-left: 16px;
+}
+  
+/* PAGINATION */
+  
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  
+    bottom: 0;
+}
+   
+.swiper-pagination-bullet {               
+    /* Round size and no-Active */
+    width: 10px;
+    height: 10px;
+}
+  
+.swiper-pagination-bullet-active {
+    /* Background color and Size */
+    background: var(--blue-main);
+    width: 14px;
+    height:  14px;
+}
+  
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+}
+  
+/* NAVIGATION */
+  
+.swiper-button-next {
+    right: 30px;
+}
+  
+.swiper-button-prev {
+    left: 30px;
+}
+  
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+    content: url('/icons/prevPagination.svg');
+}
+  
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+    content: url('/icons/nextPagination.svg');
+}
+  
+/* TEXT */
+  
+.BannerBg {
+    background: url('/bannerMobile.svg') no-repeat center/cover;
+    border-radius: 24px;
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    
+    button {
+        margin-right: 16px;
+        margin-bottom: 10px;
+        padding: 12px 0;
+        color: #fff;
+    }
+}
+  
+.wrapperText {
+    margin-right: 16px;
+    h1 {
+        font-weight: bold;
+        font-size: 22px;
+        margin-top: 10px;
+    }
+} 
+
+.wrapperSubtext {
+    display: flex;
+    gap: 57px;
+  
+    p {
+      font-weight: normal;
+      font-size: 15px;
+      color: #7893B0;
+    }
+  
+    span {
+      font-weight: bold;
+      font-size: 15px;
+      line-height: normal;
+      color: #244F6D;
+    }
+}
+  

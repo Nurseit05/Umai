@@ -3,6 +3,7 @@ import React from 'react';
 
 import s from './contacts.module.scss'
 import clsx from 'clsx';
+import { Images } from '@/components/Imges';
 
 interface Icons {
     img: string,
@@ -15,7 +16,7 @@ const arrayIcons = [
     {img: '/icons/vk.svg', alt: 'vk'},
     {img: '/icons/instagram.svg', alt: 'instagram'},
     {img: '/icons/twitter.svg', alt: 'twitter'},
-    {img: '/icons/youtube.svg', alt: 'youtube'},
+    {img: '/icons/youtube.png', alt: 'youtube'},
 ]
 
 const Contacts = () => {
@@ -62,7 +63,7 @@ const Contacts = () => {
                     </div>
                     <div className='flex gap-x-3 items-start'>
                         <div className={clsx(s.circleDiv, s.blueDiv)}>
-                            <Image width={14} height={14} alt='' src='/icons/phone.svg' />
+                            <Images width={14} height={14} alt='' imgSrc='/icons/email.svg'/>
                         </div>
                         <div className='flex flex-col gap-y-1'>
                             <p>Телефон</p>

@@ -21,7 +21,7 @@ const NavLeft = () => {
     const pathname = usePathname()
 
     return (
-        <section className='flex gap-6' >
+        <nav className={s.wrapperNav} >
             {arrayRoute.map(item =>
                 <Link 
                     key={item.href}
@@ -33,7 +33,7 @@ const NavLeft = () => {
                 </Link> 
             )}
             
-        </section>
+        </nav>
     );
 };
 

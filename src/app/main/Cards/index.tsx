@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoCards from '@/components/CardsList/cards';
+import CardsDefault from '@/components/CardsDefault';
 
 import s from './card.module.scss'
 import clsx from 'clsx';
@@ -7,30 +7,30 @@ import clsx from 'clsx';
 const Cards = () => {
     return (
         <div>
-            <div className='container mx-auto flex gap-x-6'>
-                <InfoCards 
+            <section className='flex gap-x-6'>
+                <CardsDefault
                     title='Агрегация' subtitle='Теперь все важи платежи в одном месте!' 
                     classText={clsx(s.aggrText)}  imgSrc='/aggregation.svg'
-                    className={s.Aggregation} roundButton={true} button='Подробнее'
+                    className={s.Aggregation} button={true}
                 />
-                <InfoCards 
+                <CardsDefault
                     title='Процессинг' subtitle='Современное информационное и технологическое взаимодействие' 
                     classText={clsx(s.procText)}  imgSrc='/processing.png'
-                    className={s.Processing} roundButton={true} button='Подробнее'
+                    className={s.Processing} button={true}
                 />
-            </div>
-            <div className='container mx-auto flex gap-x-6 mt-6'>
-                <InfoCards
+            </section>
+            <section className='flex gap-x-6 mt-6'>
+                <CardsDefault
                     title='Кошелек' subtitle='Все ваши средства у вас под рукой!' 
-                    classText={clsx(s.purText)}  imgSrc='/purse.svg' roundButton={true}
-                    className={s.Purse} button='Подробнее'
+                    classText={clsx(s.purText)}  imgSrc='/purse.svg'
+                    className={s.Purse} button={true}
                 />
-                <InfoCards
+                <CardsDefault
                     title='Эквайринг' subtitle='Технология безналичного приема платежей ' 
-                    classText={clsx(s.acqText)}  imgSrc='/acquiring.svg' roundButton={true}
-                    className={s.Acquiring} button='Подробнее'
+                    classText={clsx(s.acqText)}  imgSrc='/acquiring.svg'
+                    className={s.Acquiring} button={true}
                 />
-            </div>
+            </section>
         </div>
     );
 };

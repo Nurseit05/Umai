@@ -13,7 +13,7 @@ const Slide = () => {
 
   return (
     <>
-      <Slider items={slideItems} />
+      <Slider  />
     </>
   );
 };

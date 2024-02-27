@@ -15,13 +15,22 @@
 }
 
 .atmText {
-   max-width: 630px;
+   flex-basis: 53%;
+   div {
+      margin-bottom: 42px;
+   }
 }
 
 .provader {
-   max-width: 284px;
+   flex-basis: 56%;
+   div {
+      margin-bottom: 46px;
+   }
 }
 
 .card {
-   max-width: 284px;
+   flex-basis: 71%;
+   div {
+      margin-bottom: 20px;
+   }
 }

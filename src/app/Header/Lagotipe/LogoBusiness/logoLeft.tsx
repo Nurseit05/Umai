@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const LogoLeft = () => {
     return (
-        <div className='flex items-center gap-6'> 
+        // <div className='flex items-center gap-6'> 
             <Link href='/'>
                 <Image
                     src="/icons/logo.svg"
@@ -16,8 +16,8 @@ const LogoLeft = () => {
                     // priority
                 />
             </Link>
-            <div className='line-divider'></div>
-        </div>
+            /* <div className='line-divider'></div> */
+        // </div>
     )
 };
 

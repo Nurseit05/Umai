@@ -1,0 +1,132 @@
+/* SWIPER */
+
+.swiper {
+  width: 100%;
+  padding: 30px 0 23px 0;
+}
+
+.swiper-wrapper {
+  max-width: 1840px;
+  height: 506px;
+}
+  
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* PAGINATION */
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  bottom: 0;
+}
+
+.swiper-pagination-bullet {
+  /* Round size and no-Active */
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  /* Background color and Size */
+  background: var(--blue-main);
+  width: 14px;
+  height:  14px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
+}
+
+/* NAVIGATION */
+
+.swiper-button-next {
+  right: 30px;
+}
+
+.swiper-button-prev {
+  left: 30px;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: url('/icons/prevPagination.svg');
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: url('/icons/nextPagination.svg');
+}
+
+/* TEXT */
+
+.BannerBg {
+  background: url('/banner.jpg') no-repeat center/cover;
+  border-radius: 24px;
+}
+
+.CacheHand {
+  @media(max-width: 1440px) {
+    max-width: 50%;
+  }
+}
+
+.wrapperText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 21px;
+  max-width: 50%;
+
+  padding-left: 15%;
+
+  @media(max-width: 1440px) {
+    padding-left: 6%;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 55px;
+    line-height: normal;
+  }
+  
+  @media screen and (min-width: 767px) and (max-width: 1023px) {
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  button {
+    margin-top: 21px;
+    max-width: 240px;
+    min-height: 55px;
+    color: #fff;
+  }
+}
+
+.wrapperSubtext {
+  display: flex;
+  gap: 66px;
+  max-width: 410px;
+
+  p {
+    font-weight: normal;
+    font-size: 20px;
+    color: #7893B0;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,41 @@
+.containerPadding {
+    padding: 32px 32px 36px 32px;
+    border-radius: 26px;
+    border: 1px solid #fff;
+    background: #fff;
+    width: 100%;
+}
+
+.wrapperText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    p {
+        font-weight: bold;
+        font-size: 28px;
+        color: #18191C;
+    }
+}
+
+.wrapperButton {
+    gap: 4px;
+    display: flex;
+    span {
+        font-weight: 500;
+        font-size: 16px;
+        color: #7893B0;
+    }
+}
+
+.text {
+    p {
+        font-weight: normal;
+        font-size: 16px;
+    }
+    span {
+        font-weight: normal;
+        font-size: 14px;
+        color: #BABCC4;
+    }
+}

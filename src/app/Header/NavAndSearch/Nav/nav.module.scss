@@ -1,3 +1,12 @@
 .colorActive {
     color: #1757A2;
 }
+
+.wrapperNav {
+    display: flex;
+    gap: 1.5rem;
+
+    @media screen and (min-width: 767px) and (max-width: 1023px) {
+        gap: 1rem;
+    }
+}
