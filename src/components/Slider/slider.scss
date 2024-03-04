@@ -3,18 +3,44 @@
 .swiper {
   width: 100%;
   padding: 30px 0 23px 0;
+
+  @media(max-width: 960px) {
+    height: 100%;
+    padding: 0 0 30px 0;
+  }
 }
 
 .swiper-wrapper {
   max-width: 1840px;
   height: 506px;
+
+  @media(max-width: 960px) {
+    height: 385px;
+    padding-top: 18px;
+  }
 }
   
 .swiper-slide {
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media(max-width: 960px) {
+    align-items: normal;
+    flex-direction: column;
+    padding: 20px 0;
+  }
 }
+
+@media(max-width: 960px) {
+
+  .swiper-slide {
+    width: 90% !important;
+    margin-right: 10px;
+  }
+}
+
 
 /* PAGINATION */
 
@@ -73,11 +99,19 @@
 .BannerBg {
   background: url('/banner.jpg') no-repeat center/cover;
   border-radius: 24px;
+
+  @media(max-width: 960px) {
+    background: url('/bannerMobile.svg') no-repeat center/cover;
+    button {
+      padding: 12px 0;
+      margin: 0 20px;
+      color: #fff;
+    }
+  }
 }
 
 .CacheHand {
-  @media(max-width: 1440px) {
-    max-width: 50%;
+  @media(max-width: 960px) {
   }
 }
 
@@ -87,22 +121,29 @@
   justify-content: center;
   gap: 21px;
   max-width: 50%;
-
   padding-left: 15%;
 
   @media(max-width: 1440px) {
     padding-left: 6%;
   }
 
-  h1 {
+  @media(max-width: 960px) {
+    padding: 0 16px;
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  h4 {
     font-weight: bold;
     font-size: 55px;
     line-height: normal;
-  }
-  
-  @media screen and (min-width: 767px) and (max-width: 1023px) {
-    h1 {
+
+    @media screen and (min-width: 767px) and (max-width: 1023px) {
       font-size: 45px;
+    }
+    
+    @media(max-width: 960px) {
+      font-size: 22px;
     }
   }
 
@@ -122,11 +163,25 @@
   p {
     font-weight: normal;
     font-size: 20px;
-    color: #7893B0;
+    color: #7893B0; 
+    @media(max-width: 960px) {
+      font-size: 15px;
+      color: #477498;
+    }
   }
 
   span {
     font-weight: bold;
     font-size: 20px;
+    color: #244F6D;
+    @media(max-width: 960px) {
+      font-size: 15px;
+    }
   }
+}
+
+.wrapperImg {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 20px;
 }

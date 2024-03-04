@@ -5,20 +5,39 @@
     border-radius: 16px;
     width: 100%;
     min-height: 361px;
+    @media(max-width: 960px) {
+        padding: 20px 17px 18px 22px;
+    }
 }
   
 .text {
     p {
-      font-weight: bold;
-      font-size: 28px;
-      color: #18191C;
-      margin-bottom: 24px;
+        font-weight: bold;
+        font-size: 28px;
+        color: #18191C;
+        margin-bottom: 24px;
+        @media(max-width: 960px) {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
     }
     span {
         font-weight: normal;
         font-size: 18px;
         color: #474A53;
+        @media(max-width: 960px) {
+            font-size: 14px;
+        }
     }
+    div {
+        font-weight: normal;
+        font-size: 18px;
+        color: #474A53;
+        @media(max-width: 960px) {
+            font-size: 14px;
+        }
+    }
+
 }
 
 .textBlue {

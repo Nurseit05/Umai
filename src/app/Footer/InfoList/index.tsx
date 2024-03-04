@@ -34,7 +34,7 @@ const InfoList = () => {
         <section key={item.title} className={s.wrapper}>
           <div className={s.text}>
             <h3>{item.title}</h3>
-            <Image src='/rightLine.png' width={20} height={20} alt='>' />
+            <Image src='/icons/rightLine.png' width={20} height={20} alt='>' />
           </div>
           <ul className={s.list}>
             {item.items.map((listItem, i) => (

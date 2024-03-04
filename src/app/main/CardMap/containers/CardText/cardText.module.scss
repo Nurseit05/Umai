@@ -4,6 +4,10 @@
     border: 1px solid #fff;
     background: #fff;
     width: 100%;
+
+    @media(max-width: 960px) {
+        padding: 32px 22px;
+    }
 }
 
 .wrapperText {
@@ -15,6 +19,9 @@
         font-weight: bold;
         font-size: 28px;
         color: #18191C;
+        @media(max-width: 960px) {
+            font-size: 20px;
+        }
     }
 }
 
@@ -32,6 +39,9 @@
     p {
         font-weight: normal;
         font-size: 16px;
+        @media(max-width: 960px) {
+            font-size: 12px;
+        }
     }
     span {
         font-weight: normal;

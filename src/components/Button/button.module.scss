@@ -1,14 +1,14 @@
 .button {
     border-radius: 90px;
     transition: all 0.3s ease;
-    display: flex;
     background: #3BA9DC;
 
+    display: flex;
     align-items: center;
-    cursor: pointer;
-    text-align: center;
- 
     justify-content: center;
+    cursor: pointer;
+
+    position: relative;
 
     &:disabled {
         opacity: 0.5;
@@ -16,10 +16,14 @@
 }
 
 .roundDiv {
+    position: absolute;
+    right: 6px;
+
     width: 34px;
     height: 34px;
     border-radius: 50%;
     background-color: #FFFFFF;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,4 +43,8 @@
 
 .blue {
     background: #3BA9DC;
+}
+
+.yellow {
+    background: #FDD400;
 }

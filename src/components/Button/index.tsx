@@ -6,9 +6,11 @@ import Image from 'next/image'
 export type ButtonColor =
     | 'blue'
     | 'orange'
+    | 'yellow'
 const colors: Record<ButtonColor, string> = {
     blue: s.blue,
-    orange: s.orange
+    orange: s.orange,
+    yellow: s.yellow
 }
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     color?: ButtonColor,
@@ -36,10 +38,10 @@ const Button = ({
             {...props}
             className={clsx(
                 s.button,
-                props.className
+                props.className,
             )}
         >
-            {props.children}
+            <p>{props.children}</p>
             <div className={s.roundDiv}  >
                 <Image src='/icons/rightButton.png' 
                     width={11} height={5.5} alt='>'

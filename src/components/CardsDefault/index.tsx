@@ -4,6 +4,8 @@ import Button from '../Button';
 
 import s from './cardsDefault.module.scss'
 import clsx from 'clsx';
+import { useMediaQuery } from '@/hook/useMediaQuery';
+import Image from 'next/image';
 
 interface Props  {
     title: string, 
@@ -19,6 +21,8 @@ const CardsDefault = ({
     subtitle, button, imgSrc,
 }: Props) => {
 
+    const sizeDesktop = useMediaQuery()
+
     return (
         <div className={clsx(s.container, className)}>
             <div className={clsx(s.wrapperText, classText)}>
@@ -26,14 +30,27 @@ const CardsDefault = ({
                     <p>{title}</p>
                     {subtitle && <span>{subtitle}</span>}
                 </div>
-                {button 
-                    ? <Button round={true} className={s.buttonRound}>Подробнее</Button> 
-                    : <Button round={false} className={s.button} >Смотреть на карте</Button>
+                {sizeDesktop && (
+                    <Button
+                        round={button}
+                        className={button ? s.buttonRound : s.button}
+                    >
+                        {button ? 'Подробнее' : 'Смотреть на карте'}
+                    </Button>
+                )
                 }
             </div>
             <div>
-                <img src={imgSrc} />
+                <img src={imgSrc}  alt='' />
             </div>
+            {!sizeDesktop && (
+                <Button
+                    round={button}
+                    className={button ? s.buttonRound : s.button}
+                >
+                    {button ? 'Подробнее' : 'Смотреть на карте'}
+                </Button>
+            )}
         </div>
     );
 };

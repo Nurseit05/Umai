@@ -1,0 +1,17 @@
+.wrapperUl {
+    display: flex;
+    padding: 11px 10px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.listText {
+    p {
+        font-size: 12px;
+        font-weight: 500;
+        color: #7893B0;
+    }
+    img {
+        margin: 0 auto;
+    }
+}

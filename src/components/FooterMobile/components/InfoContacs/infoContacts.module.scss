@@ -1,0 +1,85 @@
+.container {
+    background: #f7f7f8;
+    padding-top: 150px;
+}
+
+.radiosTopInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background: #fff;
+    padding: 36px 20px 24px 20px;
+
+    li {
+        font-size: 13px;
+        font-weight: normal;
+        color: #3BA9DC;
+        padding-bottom: 16px;
+    }
+}
+
+.socialMedia {
+    background: #fff;
+    padding: 0px 20px;
+}
+
+.whatsAppContacts {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.wrapperText {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        color: #838795;
+    }
+    span {
+        font-weight: normal;
+        font-size: 14px;
+        color: #244F6D;
+    }
+}
+
+.socialMediaRound {
+    display: flex;
+    gap: 17px;
+    padding: 30px 0;
+}
+
+.circleDiv {
+    width: 32px;
+    height: 32px;
+    border-radius: 86.09px; 
+    padding: 6px; 
+    background-color: #F1F2F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.privacyPolicy {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 10px 20px 24px 10px;
+    background: #3BA9DC;
+    
+    p {
+        font-weight: normal;
+        font-size: 13px;
+        color: #fff;
+        text-align: center;
+    }
+
+    a { 
+        text-decoration: underline;
+    }
+}

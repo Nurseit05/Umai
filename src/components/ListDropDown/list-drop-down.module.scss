@@ -1,0 +1,50 @@
+.link {
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+  color: gray;
+}
+  
+.title {
+  font-weight: normal;
+  font-size: 13px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+
+  color: #244F6D;
+
+  width: 100%;
+  height: 100%;
+}
+  
+.titleWrapper {
+  width: 100%;
+}
+  
+.dropDown {
+  border-radius: 8px;
+  background: #f7f7f8;
+  padding: 12px 0;
+  li {
+    padding: 6px 10px !important;
+    color: #758795 !important;
+    &:hover {
+      background-color: #dedeed;
+    }
+  }
+}
+  
+.link {
+  color: white;
+}
+  
+.arrow {
+  transition: all 0.1s ease-in-out;
+  &.active {
+    transform: rotate(180deg);
+  }
+}
+  

@@ -1,8 +1,10 @@
 .container {
     // min-width: 1300px;
-    // @media(max-width: 960px) {
-    //     display: none;
-    // }
+    @media(max-width: 960px) {
+        display: none;
+    }
+
+
 }
 
 .containerBorder {
@@ -16,6 +18,10 @@
     flex-direction: column;
     gap: 52px;
     background: #fff;
+
+    @media(max-width: 768px) {
+        display: none;
+    }
 }
 
 .bgGray {

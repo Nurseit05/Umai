@@ -13,7 +13,7 @@ const LogoLeft = () => {
                     alt="Umai Logo"
                     width={99}
                     height={36.73}
-                    // priority
+                    priority={true}
                 />
             </Link>
             /* <div className='line-divider'></div> */

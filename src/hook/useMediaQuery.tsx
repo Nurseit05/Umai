@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export function useMediaQuery(targetSize: number = 768) {
+export function useMediaQuery(targetSize: number = 960) {
     const [ready, setReady] = useState(false);
 
     useEffect(() => {

@@ -25,7 +25,7 @@ const TranslationRight = () => {
                     />
                     {index === 3 ? (
                         <Link href='' className='flex gap-2'>
-                            {item.text}
+                            <div>{item.text}</div>
                             <Image src='/icons/vectorDown.svg' alt='' width={11} height={11} />
                         </Link>
                     ) : (

@@ -8,6 +8,12 @@
     @media screen and (min-width: 767px) and (max-width: 1023px) {
         align-items: center;
     }
+
+    @media(max-width: 960px) {
+        padding: 22px 22px 18px 22px;
+        flex-direction: column;
+        align-items: center;
+    }
 }
   
 .text {
@@ -15,11 +21,19 @@
       font-weight: bold;
       font-size: 28px;
       color: #18191C;
+
+        @media(max-width: 960px) {
+            font-size: 24px;
+        }
     }
     span {
         font-weight: normal;
         font-size: 18px;
         color: #474A53;
+
+        @media(max-width: 960px) {
+            font-size: 14px;
+        }
     }
 }
 
@@ -31,15 +45,22 @@
   
 .buttonRound {
     padding: 12px 6px 12px 20px;
-    justify-content: space-between;
+    justify-content: flex-start;
     color: #FFF;
     width: 164px;
     height: 44px;
+
+    @media(max-width: 960px) {
+        justify-content: center;
+        width: 50%;
+    }
+    @media(max-width: 425px) {
+        width: 100%;
+    }
 }
 
 .button {
     padding: 12px 20px;
-    align-items: center;
     color: #fff;
     min-width: 190px;
     height: auto;
