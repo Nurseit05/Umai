@@ -1,50 +1,83 @@
 .container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 26px;
 
     @media(max-width: 960px) {
         gap: 8px;
-    }
-}
-
-.wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 26px;
-
-    @media(max-width: 960px) {
+        flex-wrap: wrap;
         flex-direction: column;
-        gap: 8px;
     }
-}
 
-.Aggregation {
-    background: linear-gradient(to right, #F8E6F8, #FDE9C2);
-}
-.Processing {
-    background: linear-gradient(to right, #F0F8E6, #C2F6FD);
-}
-.Purse {
-    background: linear-gradient(to right, #F7F8E6, #C2DDFD);
-}
-.Acquiring {
-    background: linear-gradient(to right, #ECF8E6, #EACFFF);
-}
+    section:first-child {
+        background: linear-gradient(to right, #F8E6F8, #FDE9C2);
+        min-height: 260px;
+        max-height: 350px;
+        div {
+            flex-basis: 46%;
+        }
 
-.aggrText {
-    flex-basis: 46%;
-}
+        img:nth-child(2) {
+            width: 235px;
 
-.procText {
-    flex-basis: 60%;
-}
+            @media(max-width: 960px){
+                width: 150px;
+                height: 160px;
+            }
+        }
+    }
+    
+    section:nth-child(2) {
+        background: linear-gradient(to right, #F0F8E6, #C2F6FD);
+        min-height: 260px;
+        max-height: 350px;
+        div {
+            flex-basis: 61%;
+        }
 
-.purText {
-    flex-basis: 34%;
-}
+        img:nth-child(2) {
+            width: 180px;
 
-.acqText {
-    flex-basis: 46%;
+            @media(max-width: 960px){
+                width: 160px;
+                height: 160px;
+            }
+        }
+    }
+
+    section:nth-child(3) {
+        background: linear-gradient(to right, #F7F8E6, #C2DDFD);
+        min-height: 260px;
+        max-height: 350px;
+        div {
+            flex-basis: 34%;
+        }
+
+        img:nth-child(2) {
+            width: 215px;
+
+            @media(max-width: 960px){
+                width: 160px;
+                height: 160px;
+            }
+        }
+    }
+
+    section:nth-child(4) {
+        background: linear-gradient(to right, #ECF8E6, #EACFFF);
+        min-height: 260px;
+        max-height: 350px;
+        div {
+            flex-basis: 46%;
+        }
+
+        img:nth-child(2) {
+            width: 235px;
+
+            @media(max-width: 960px){
+                width: 185px;
+                height: 185px;
+            }
+        }
+    }
 }

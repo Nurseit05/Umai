@@ -4,6 +4,7 @@ import BannerCard from "./BannerCard";
 
 import s from './main.module.scss'
 import Slider from "@/components/Slider";
+import FixedPhone from "../../components/FixedPhone";
 
 export default function Main() {
 
@@ -14,6 +15,7 @@ export default function Main() {
                 <Cards/>
                 <BannerCard/>
                 <CardMap/>
+                <FixedPhone/>
             </main>
         </main>
     )

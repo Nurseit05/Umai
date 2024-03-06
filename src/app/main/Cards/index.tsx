@@ -2,50 +2,40 @@ import React, { useEffect, useState } from 'react';
 import CardsDefault from '@/components/CardsDefault';
 
 import s from './card.module.scss'
-import clsx from 'clsx';
-import { Main_PageApi } from '@/api/service/main_Page';
-import { Blocks } from '@/api/service/main_Page/type';
+import { getMainPage } from '@/api/service/main_Page';
+import { MainPageAll } from '@/api/service/main_Page/mainType';
 
 const Cards = () => {
 
-    const [blocks, setBlocks] = useState<Blocks[]>([]);
+    const [services, setServices] = useState<MainPageAll[]>([]);
+
+    async function fetchData() {
+        try {
+          const res = await getMainPage();
+          setServices(res.data.services);
+        } catch (error) {
+          console.log(error);
+        }
+    }    
 
     useEffect(() => {
-      Main_PageApi.getMainPage()
-        .then((res) => {
-          setBlocks(res.data.blocks);
-        })
-        .catch((error) => {
-          console.log(error);
-      });
+        fetchData()
     }, []);
+    
+    if (!services) {
+        return null;
+    }
 
     return (
         <div className={s.container}>
-            <section className={s.wrapper}>
+            {services.map((item, idex) => 
                 <CardsDefault
-                    title='Агрегация' subtitle='Теперь все ваши платежи в одном месте!' 
-                    classText={clsx(s.aggrText)}  imgSrc='/aggregation.svg'
-                    className={s.Aggregation} button={true}
+                    key={idex}
+                    title={item.title} subtitle={item.text}
+                    imgSrc={item.image}
+                    button={true}
                 />
-                <CardsDefault
-                    title='Процессинг' subtitle='Современное информационное и технологическое взаимодействие' 
-                    classText={clsx(s.procText)}  imgSrc='/processing.png'
-                    className={s.Processing} button={true}
-                />
-            </section>
-            <section className={s.wrapper}>
-                <CardsDefault
-                    title='Кошелек' subtitle='Все ваши средства у вас под рукой!' 
-                    classText={clsx(s.purText)}  imgSrc='/purse.svg'
-                    className={s.Purse} button={true}
-                />
-                <CardsDefault
-                    title='Эквайринг' subtitle='Технология безналичного приема платежей ' 
-                    classText={clsx(s.acqText)}  imgSrc='/acquiring.svg'
-                    className={s.Acquiring} button={true}
-                />
-            </section>
+            )}
         </div>
     );
 };

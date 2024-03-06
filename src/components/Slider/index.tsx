@@ -12,9 +12,9 @@ import { Navigation, Pagination } from 'swiper/modules';
 import Button from '../Button';
 import Image from 'next/image';
 import { useMediaQuery } from '@/hook/useMediaQuery';
-import { Main_PageApi } from '@/api/service/main_Page';
+import { getMainPage } from '@/api/service/main_Page';
 import { useEffect, useState } from 'react';
-import { Banner } from '@/api/service/main_Page/type';
+import { Banner } from '@/api/service/main_Page/mainType';
 
 export default function Slider() {
 
@@ -24,11 +24,11 @@ export default function Slider() {
 
   async function fetchData() {
     try {
-      const res = await Main_PageApi.getMainPage();
+      const res = await getMainPage();
       setBanners(res.data.banners);
     } catch (error) {
-    console.log(error);
-  }
+      console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -37,34 +37,34 @@ export default function Slider() {
 
   const bannersArray = banners || [];
 
+  const stylesBg = {background: `url(${sizeDesktop ? bannersArray.background : bannersArray.background_mobile}) no-repeat center/cover #fff`}
+
   return (
     <Swiper
       navigation={sizeDesktop ? true : false} pagination={{clickable: true}}
       modules={[Navigation, Pagination]}
       loop={true}
     >
-      {bannersArray.map(item => 
-        <SwiperSlide key={item.id} className='BannerBg'>
-          <div className='wrapperText'>
-            <h4>{item.title}</h4>
-            <div className='wrapperSubtext' >
-              <div>
-                <p>{item.key_1}</p>
-                <span>{item.value_1}</span>
-              </div>
-              <div>
-                <p>{item.key_2}</p>
-                <span>{item.value_1}</span>
-              </div>
+      <SwiperSlide style={stylesBg} className='BannerBg'>
+        <div className='wrapperText'>
+          <h4>{bannersArray.title}</h4>
+          <div className='wrapperSubtext' >
+            <div>
+              <p>{bannersArray.key_1}</p>
+              <span>{bannersArray.value_1}</span>
             </div>
-            {sizeDesktop && <Button color='blue'>{item.action_text}</Button>}
+            <div>
+              <p>{bannersArray.key_2}</p>
+              <span>{bannersArray.value_1}</span>
+            </div>
           </div>
-          <div className={sizeDesktop ? '' : 'wrapperImg'}>
-            <Image src='/CacheHand.svg' width={sizeDesktop ? 920 : 320} height={sizeDesktop ? 460 : 140} alt='' className='CacheHand' />
-          </div>
-          {!sizeDesktop && <Button color='blue'>{item.action_text}</Button>}
-        </SwiperSlide>  
-      )}
+          {sizeDesktop && <Button color='blue'>{bannersArray.action_text}</Button>}
+        </div>
+        <div className={sizeDesktop ? '' : 'wrapperImg'}> 
+          <Image src={bannersArray.image} width={sizeDesktop ? 920 : 320} height={sizeDesktop ? 460 : 140} alt='' className='CacheHand' />
+        </div>
+        {!sizeDesktop && <Button color='blue'>{bannersArray.action_text}</Button>}
+      </SwiperSlide>  
       <SwiperSlide className='BannerBg'>
       </SwiperSlide>
       <SwiperSlide className='BannerBg'></SwiperSlide>

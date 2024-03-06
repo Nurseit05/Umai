@@ -1,57 +1,52 @@
 import React from 'react';
+import * as DOMPurify from 'dompurify';
 
 import Button from '../Button';
+import Image from 'next/image';
+
+import { useMediaQuery } from '@/hook/useMediaQuery';
 
 import s from './cardsDefault.module.scss'
-import clsx from 'clsx';
-import { useMediaQuery } from '@/hook/useMediaQuery';
-import Image from 'next/image';
 
 interface Props  {
     title: string, 
     subtitle: string,
-    className: string, 
-    classText?: string,
     imgSrc: string,
     button?: boolean,
+    backgroundUrl?: string
 }
 
 const CardsDefault = ({
-    className, classText, title, 
-    subtitle, button, imgSrc,
+    title, 
+    subtitle, 
+    button,
+    imgSrc,
+    backgroundUrl
 }: Props) => {
 
     const sizeDesktop = useMediaQuery()
 
+    const cleanedHTML = DOMPurify.sanitize(title);
+
+    const stylesBg = {background: backgroundUrl ? `url(${backgroundUrl}) no-repeat center/cover` : ''}
+
     return (
-        <div className={clsx(s.container, className)}>
-            <div className={clsx(s.wrapperText, classText)}>
-                <div className={s.text}>
-                    <p>{title}</p>
+        <section style={stylesBg} className={s.container}>
+            <div className={s.wrapperText}>
+                <p className={s.text}>
+                    <h5 dangerouslySetInnerHTML={{__html: cleanedHTML}}/>
                     {subtitle && <span>{subtitle}</span>}
-                </div>
-                {sizeDesktop && (
-                    <Button
-                        round={button}
-                        className={button ? s.buttonRound : s.button}
-                    >
-                        {button ? 'Подробнее' : 'Смотреть на карте'}
-                    </Button>
-                )
-                }
-            </div>
-            <div>
-                <img src={imgSrc}  alt='' />
-            </div>
-            {!sizeDesktop && (
+                </p>
+                {!sizeDesktop && <Image src={imgSrc} height={200} width={200} alt='' />}
                 <Button
                     round={button}
                     className={button ? s.buttonRound : s.button}
                 >
                     {button ? 'Подробнее' : 'Смотреть на карте'}
                 </Button>
-            )}
-        </div>
+            </div>
+            {sizeDesktop && <Image height={300} width={300} src={imgSrc}  alt='' />}
+        </section>
     );
 };
 

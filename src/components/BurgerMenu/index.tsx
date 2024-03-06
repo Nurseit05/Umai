@@ -13,7 +13,8 @@ interface Props {
 }
 
 const Navigation = [
-    { title: 'Офферта', link: '/.', img: '/icons/file.svg' },
+    { title: 'Процессинг', link: '/processing', img: '/icons/file.svg' },
+    { title: 'Офферта', link: '/', img: '/icons/file.svg' },
     { title: 'Правила', link: '/..', img: '/icons/burgerLine.svg' },
     { title: 'Офисы и банкоматы', link: '/...', img: '/icons/MapPin.svg' }
 ]

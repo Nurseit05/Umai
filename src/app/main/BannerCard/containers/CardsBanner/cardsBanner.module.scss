@@ -1,17 +1,19 @@
 .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 35px 30px 0 50px;
     border-radius: 16px;
-    width: 100%;
+
     min-height: 361px;
+
     @media(max-width: 960px) {
-        padding: 20px 17px 18px 22px;
+        display: block;
     }
 }
-  
+
 .text {
-    p {
+    h5 {
         font-weight: bold;
         font-size: 28px;
         color: #18191C;
@@ -29,21 +31,8 @@
             font-size: 14px;
         }
     }
-    div {
-        font-weight: normal;
-        font-size: 18px;
-        color: #474A53;
-        @media(max-width: 960px) {
-            font-size: 14px;
-        }
-    }
-
 }
 
-.textBlue {
-    color: #3BA9DC;
-}
-  
 .button {
     padding: 12px 6px 12px 20px;
     align-items: center;

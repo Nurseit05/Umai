@@ -1,26 +1,27 @@
 .container {
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
-    padding: 35px 30px 0 50px;
+    padding: 35px 30px 0 50px;;
     border-radius: 16px;
-    width: 100%;
+    width: calc(50% - 13px);
 
     @media screen and (min-width: 767px) and (max-width: 1023px) {
         align-items: center;
     }
 
     @media(max-width: 960px) {
+        display: block;
+        border-radius: 24px;
         padding: 22px 22px 18px 22px;
-        flex-direction: column;
-        align-items: center;
+        width: 100%;
     }
 }
   
 .text {
-    p {
-      font-weight: bold;
-      font-size: 28px;
-      color: #18191C;
+    h5 {
+        font-weight: bold;
+        font-size: 28px;
+        color: #18191C;
 
         @media(max-width: 960px) {
             font-size: 24px;
@@ -40,7 +41,12 @@
 .wrapperText {
     display: flex;
     flex-direction: column;
-    gap: 20px
+    gap: 40px;
+
+    @media(max-width: 960px) {
+        align-items: center;   
+        gap: 0;
+    }
 }
   
 .buttonRound {
@@ -56,12 +62,17 @@
     }
     @media(max-width: 425px) {
         width: 100%;
+        padding-right: 41px;
     }
 }
 
 .button {
-    padding: 12px 20px;
+    padding: 12px 24px;
     color: #fff;
     min-width: 190px;
     height: auto;
+
+    @media(max-width: 960px) {
+        background: #3BA9DC;
+    }
 }

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import s from './menuFooterRouter.module.scss'
 import BurgerMenu from '@/components/BurgerMenu';
+import Link from 'next/link';
 
 const MenuFooterRouter = () => {
 
@@ -28,8 +29,17 @@ const MenuFooterRouter = () => {
             <ul className={s.wrapperUl}>
                 {arrayIcon.map(item => 
                     <li className={s.listText} key={item.img}>
-                        <Icon onClick={item.onClick} srcImg={item.img}/>
-                        <p>{item.text}</p>
+                        {item.onClick ? (
+                            <div onClick={item.onClick}>
+                                <Icon srcImg={item.img} />
+                                <p>{item.text}</p>
+                            </div>
+                        ) : (
+                            <Link href={item.href}>
+                                <Icon srcImg={item.img} />
+                                <p>{item.text}</p>
+                            </Link>
+                        )}
                     </li>
                 )}
             </ul>

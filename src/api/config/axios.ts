@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const clientApi = axios.create({
-  baseURL: 'http://195.38.166.135:8000/api/',
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
 function setResponseInterceptors() {

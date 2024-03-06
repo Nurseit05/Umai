@@ -1,18 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import s from './cardText.module.scss'
 import Image from 'next/image';
+import { getMainPage } from '@/api/service/main_Page';
+
+export interface UpDates {
+    title: string,
+    text: string,
+    action_text: string,
+    action_path: void,
+    created_at: string
+}
 
 const CardText = ({sizeDesktop}) => {
+
+    const [upDates, setupDates] = useState<UpDates | undefined>(undefined);
+
+    async function fetchData() {
+        try {
+            const res = await getMainPage();
+            setupDates(res.data.updates);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, []);
+
+    if (!upDates) {
+        return null;
+    }
+
+    const createdAtDate = new Date(upDates.created_at);
+    const formattedDate = `${String(createdAtDate.getDate()).padStart(2, '0')}.${String(createdAtDate.getMonth() + 1).padStart(2, '0')}.${createdAtDate.getFullYear()}`;
+
     return (
-        <div className={s.containerPadding}>
+        <section className={s.containerPadding}>
             <div className={s.wrapperText}>
-                <p>Обновления</p>
+                <p>{upDates.title}</p>
                 <button className={s.wrapperButton}>
                     {sizeDesktop && ( 
                         <>
-                            <span>ВСЕ </span>
-                            <span>ОБНОВЛЕНИЯ</span>
+                            <span>{upDates.action_text}</span>
                         </>
                         )  
                     }
@@ -23,13 +54,11 @@ const CardText = ({sizeDesktop}) => {
             </div>
             <div className={s.text}>
                 <p>
-                    Контролируйте Ваши расходы. Не можете вспомнить когда и какие счета Вы оплачивали? 
-                    Это сложно. Оплачивая счета через кошелек UMAI, Вы всегда можете просмотреть Ваш 
-                    «Журнал Транзакций» и убедится в том, что все Ваши счета оплачены и Ваши деньги работают на Вас.
+                    {upDates.text}
                 </p>
-                <span>02.05.2022</span>
+                <span>{formattedDate}</span>
             </div>    
-        </div>
+        </section>
     );
 };
 
