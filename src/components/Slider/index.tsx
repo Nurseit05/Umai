@@ -20,7 +20,7 @@ export default function Slider() {
 
   const sizeDesktop = useMediaQuery()
 
-  const [banners, setBanners] = useState<Banner[]>([]);
+  const [banners, setBanners] = useState<Banner>([]);
 
   async function fetchData() {
     try {

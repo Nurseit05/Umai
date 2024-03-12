@@ -19,7 +19,7 @@
     gap: 52px;
     background: #fff;
 
-    @media(max-width: 768px) {
+    @media(max-width: 960px) {
         display: none;
     }
 }
@@ -29,6 +29,10 @@
     width: 100%;
     padding-top: 26px;
     padding-bottom: 50px;
+
+    @media(max-width: 960px) {
+        display: none;
+    }
 }
   
 .bgWtire {
@@ -36,4 +40,8 @@
     width: 100%;
     padding-top: 26px;
     padding-bottom: 50px;
+
+    @media(max-width: 960px) {
+        display: none;
+    }
 }

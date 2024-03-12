@@ -1,23 +1,24 @@
-'use client'
+// 'use client'
 
-import Header from "../Header";
+import Header from "@/components/Header";
 import HeaderMobile from "@/components/HeaderMobile";
-import { useMediaQuery } from "@/hook/useMediaQuery";
 import FooterMobile from '@/components/FooterMobile';
-import Footer from '../Footer';
+import Footer from '@/components/Footer';
+
 import { Processing } from ".";
+
+import s from './processing.module.scss';
+
 
 export default function Process() {
 
-  const sizeMobile = useMediaQuery()
-
-  console.log(sizeMobile)
-
   return (
     <>
-      {sizeMobile ? <Header/> : <HeaderMobile/>}
+      <Header/>
+      <HeaderMobile/>
       <Processing/>
-      {sizeMobile ? <Footer/> : <FooterMobile/>}
+      <Footer classBacground={s.backgroundFooter} />  
+      <FooterMobile classBacground={s.backgroundFooter} />
     </>
   );
 }

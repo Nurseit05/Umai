@@ -1,0 +1,44 @@
+.container {
+    padding-top: 100px;
+
+    p {
+        margin-top: 50px;
+
+        font-weight: normal;
+        font-size: 18px;
+        color: #474A53;
+    }
+
+    @media(max-width: 960px) {
+        padding-top: 30px; 
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+.wrapperBanner {
+    justify-content: space-between;
+    padding: 0 50px 0 95px;
+
+    h5 {
+        font-weight: bold;
+        font-size: 30px;
+        color: #18191C;
+    }
+
+    @media(max-width: 960px) {
+        padding: 20px 25px 0 22px;
+
+
+        h5 {
+            font-size: 16px;
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+        }
+    }
+}

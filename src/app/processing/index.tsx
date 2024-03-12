@@ -1,51 +1,38 @@
-"use client"
+import BannerProcess from './bannerProcess/bannerProcess';
+import InterfacesBank from './interfacesBank/interfacesBank';
+import ParticipantsProperty from './participantsProperty/participantsProperty';
+import ProcessingServices from './processingServices/processingServices';
+import TypeProcessingSistem from './typeProcessingSistem/typeProcessingSistem';
+import UmaiServices from './umaiServices/umaiServices';
 
-import React, { useEffect, useState } from 'react';
-import { useMediaQuery } from '@/hook/useMediaQuery';
-
-import { getProcessData } from '@/api/service/processing';
-import { banner } from '@/api/service/processing/processType';
-
-import Banner from '@/components/Banner';
-import UnderTextBanner from '@/components/BannerUnderText';
+import { ProcessingApi } from '@/api/service/processing';
 
 import s from './processing.module.scss';
+import SchemeProcess from './schemeProcess';
 
-export const Processing = () => {
-  const [bannerData, setBannerData] = useState<banner>();
-  const sizeDesktop = useMediaQuery();
 
-  const fetchData = async () => {
-    try {
-      const res = await getProcessData();
-      setBannerData(res.data.banner);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  }
+export const Processing = async () => {
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  if(!bannerData) {
-    return null
-  }
+  const {
+    bannerAPI,
+    underBannerProcessingAPI,
+    interfacesTitleAPI,
+    advantagesAPI,
+    processingServicesAPI,
+    participantsTitleAPI,
+    schemeTitleAPI,
+    systemsTitleAPI
+  } = await ProcessingApi()
 
   return (
-    <>
-      {bannerData && (
-        <Banner
-          width={273}
-          height={205}
-          title={bannerData.title}
-          subtitle={bannerData.text}
-          imgSrc={bannerData.image}
-          backgroundUrl={bannerData.background}
-        />
-      )}
-      <UnderTextBanner/>
-      {/* <Main /> */}
-    </>
+    <main className={s.container}>
+      <BannerProcess banner={bannerAPI} underBannerProcessing={underBannerProcessingAPI} />
+      <InterfacesBank data={interfacesTitleAPI}/>
+      <UmaiServices data={advantagesAPI}/>
+      <ProcessingServices data={processingServicesAPI}/>
+      <ParticipantsProperty data={participantsTitleAPI}/>
+      <SchemeProcess data={schemeTitleAPI} />
+      <TypeProcessingSistem data={systemsTitleAPI}/>
+    </main>
   );
 };

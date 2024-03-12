@@ -1,17 +1,24 @@
 import React from 'react';
+import DOMPurify from "isomorphic-dompurify";
 
 import s from './bannerUnderText.module.scss'
 
 interface Props {
-
+    title: string,
+    text: string
 }
 
-const BannerUnderText = () => {
+const BannerUnderText = ({
+    title, text
+}: Props) => {
+
+    const cleanedHTML = DOMPurify.sanitize(text);
+
     return (
-        <section>
-            <h5></h5>
-            
-        </section>
+        <div className={s.container} >
+            <h5>{title}</h5>
+            <p dangerouslySetInnerHTML={{__html: cleanedHTML}}  />
+        </div>
     );
 };
 

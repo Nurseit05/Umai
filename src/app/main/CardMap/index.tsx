@@ -1,45 +1,29 @@
 import CardText from '@/app/main/CardMap/containers/CardText';
 import CardsDefault from '@/components/CardsDefault';
 
-import clsx from 'clsx';
+import { useFetch } from '@/hook/useFetch';
+
 import s from './map.module.scss'
-import { useMediaQuery } from '@/hook/useMediaQuery';
-import { useEffect, useState } from 'react';
-import { getMainPage } from '@/api/service/main_Page';
-import { MainPageAll } from '@/api/service/main_Page/mainType';
 
-const CardMap = () => {
+const CardMap = async () => {
 
-    const sizeDesktop = useMediaQuery()
+    const mainPage = await useFetch({ URL: 'mainpage/get_main/'})
 
-    const [branches, setBranches] = useState<MainPageAll>();
-
-    async function fetchData() {
-        try {
-          const res = await getMainPage();
-          setBranches(res.data.branches);
-        } catch (error) {
-          console.log(error);
-        }
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, []);
-    
-    if (!branches) {
+    if(!mainPage) {
         return null;
     }
 
+    const branches = mainPage?.branches;
+    const upDates = mainPage?.updates;
 
     return (
         <div className={s.container} >
-            <CardText sizeDesktop={sizeDesktop} />
+            <CardText data={upDates}/>
             <CardsDefault
-                title={branches.title} subtitle={branches.text}
-                imgSrc={branches.image}
+                title={branches?.title} subtitle={branches?.text}
+                imgSrc={branches?.image}
                 button={false}
-                backgroundUrl={branches.background_image}
+                backgroundUrl={branches?.background_image}
             />
         </div>
     );

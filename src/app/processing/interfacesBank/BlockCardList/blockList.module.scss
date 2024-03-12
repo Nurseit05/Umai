@@ -1,0 +1,75 @@
+.containerPadding {
+    border-radius: 24px;
+    padding: 30px 40px;
+    background: #f7f7f8;
+    width: calc(50% - 14px);
+
+    @media(max-width: 960px) {
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+
+.iconRadous {
+
+    width: 76px;
+    height: 76px;
+
+    border-radius: 18px;
+    padding: 10px;
+    background: #fff;
+
+    margin-bottom: 16px;
+
+    img {
+        width: 56px;
+        height: 56px;
+    }
+
+    @media(max-width: 960px) {
+        width: 60px;
+        height: 60px;
+
+        margin-bottom: 4px;
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.styleText {
+    p {
+        font-weight: bold;
+        font-size: 16px;
+        color: #1B71D7;
+
+        padding: 10px 20px;
+        margin-bottom: 12px;
+    }
+
+    ul {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+
+    li {
+        font-weight: 400;
+        font-size: 16px;
+        color: #474A53;
+    }
+
+    @media(max-width: 960px) {
+        p {
+            font-size: 14px;
+
+            margin-bottom: 8px;
+        }
+
+        li {
+            font-size: 12px;
+        }
+    }
+}

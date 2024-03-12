@@ -1,14 +1,8 @@
-'use client'
+import Icon from '@/UI/Icon';
 
-import React from 'react';
+import RenderListDrop from './renderListDrop';
 
 import s from './infoContacts.module.scss'
-import { IMenu } from '@/types/common';
-import ListDropDown from '@/components/ListDropDown';
-import { useRouter } from 'next/navigation';
-import { CLIENT_LIST } from '@/constants/sidebar-list/client-list';
-import { INFORMATION_LIST } from '@/constants/sidebar-list/information-list';
-import Icon from '@/UI/Icon';
 
 const arrayIcons = [
     {img: '/icons/facebook.svg', alt: 'facebook'},
@@ -21,26 +15,6 @@ const arrayIcons = [
 
 const InfoContacs = () => {
 
-    const navigate = useRouter();
-
-    const goToPage = (path: { title: string; value: string }) => {
-        navigate.push(path.value)
-    }
-
-    const renderMenuItem = (item: IMenu) => {
-        if (item?.children?.length) {
-            return (
-                <ListDropDown
-                    key={item.title}
-                    onClick={goToPage}
-                    icon={item.icon}
-                    title={item.title}
-                    list={item?.children}
-                />
-            )
-        }
-    }
-    
     return (
         <section className={s.container}>
             <div className={s.radiosTopInfo}>
@@ -48,11 +22,7 @@ const InfoContacs = () => {
                     <li>Карьера (вакансии)</li>
                     <li>Контакты</li>
                 </ul>
-                <div>
-                    {CLIENT_LIST.map(item => renderMenuItem(item))}
-                    <hr className='mt-2 mb-2' />
-                    {INFORMATION_LIST.map(item => renderMenuItem(item))}
-                </div>
+                <RenderListDrop/>
             </div>
             <div className={s.socialMedia}>
                 <div className={s.whatsAppContacts}>

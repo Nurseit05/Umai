@@ -1,23 +1,14 @@
-'use client'
-
-import { useState } from 'react'
 
 import Icon from '@/UI/Icon'
-import BurgerMenu from '../BurgerMenu'
 
-import s from './headerMobile.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const HeaderMobile = () => {
-    const [burgerOpen, setBurgerOpen] = useState(false)
-    const onBurgerClick = () => {
-        setBurgerOpen(true)
-    }
+import BurgerButton from './burgerButton/burgerButton'
 
-    const closeBurger = () => {
-        setBurgerOpen(false)
-    }
+import s from './headerMobile.module.scss'
+
+const HeaderMobile = () => {
 
     return (
         <header className={s.container}>
@@ -34,9 +25,7 @@ const HeaderMobile = () => {
                         <p>РУССКИЙ</p>
                         <Icon srcImg='/icons/vectorDown.svg' width={14} height={14} />
                     </div>
-                    <button className={s.button} onClick={onBurgerClick}>
-                        <Icon width={30} height={30} srcImg={'/icons/menu.svg'} className={s.icon} />
-                    </button>
+                    <BurgerButton/>
                 </div>
             </div>
 
@@ -47,7 +36,6 @@ const HeaderMobile = () => {
                 </div>
             </div>
 
-            {<BurgerMenu isOpen={burgerOpen} onClose={closeBurger} />}
         </header>
     )
 }

@@ -1,0 +1,29 @@
+.container {
+    padding-top: 45px;
+
+    h5 {
+        font-weight: bold;
+        font-size: 24px;
+        color: #18191C;
+    }
+
+    p {
+        font-weight: normal;
+        font-size: 18px;
+        color: #474A53;
+
+        padding-top: 16px;
+    }
+
+    @media(max-width: 960px) {
+        padding-top: 20px;
+        h5 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 14px;
+
+            padding-top: 12px;
+        }
+    }
+}

@@ -10,7 +10,7 @@ export default function Main() {
 
     return (
         <main className={s.main}>
-            <Slider/>
+            <Slider />
             <main className={s.wrapper}>
                 <Cards/>
                 <BannerCard/>

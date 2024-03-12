@@ -1,5 +1,6 @@
-import React from 'react';
-import * as DOMPurify from 'dompurify';
+'use client'
+
+import DOMPurify from 'isomorphic-dompurify';
 
 import Button from '../Button';
 import Image from 'next/image';
@@ -46,7 +47,7 @@ const CardsDefault = ({
                 </Button>
             </div>
             {sizeDesktop && <Image height={300} width={300} src={imgSrc}  alt='' />}
-        </section>
+        </section>  
     );
 };
 

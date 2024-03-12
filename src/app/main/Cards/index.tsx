@@ -1,36 +1,27 @@
-import React, { useEffect, useState } from 'react';
 import CardsDefault from '@/components/CardsDefault';
 
-import s from './card.module.scss'
-import { getMainPage } from '@/api/service/main_Page';
+import { useFetch } from '@/hook/useFetch';
+
 import { MainPageAll } from '@/api/service/main_Page/mainType';
 
-const Cards = () => {
+import s from './card.module.scss'
 
-    const [services, setServices] = useState<MainPageAll[]>([]);
 
-    async function fetchData() {
-        try {
-          const res = await getMainPage();
-          setServices(res.data.services);
-        } catch (error) {
-          console.log(error);
-        }
-    }    
+const Cards = async () => {
 
-    useEffect(() => {
-        fetchData()
-    }, []);
+    const mainPage = await useFetch({ URL: 'mainpage/get_main/'})
     
-    if (!services) {
+    if (!mainPage) {
         return null;
     }
 
+    const servicesData = mainPage?.services
+
     return (
         <div className={s.container}>
-            {services.map((item, idex) => 
+            {servicesData?.map((item: MainPageAll, index: number) => 
                 <CardsDefault
-                    key={idex}
+                    key={index}
                     title={item.title} subtitle={item.text}
                     imgSrc={item.image}
                     button={true}

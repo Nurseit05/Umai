@@ -1,0 +1,23 @@
+@media(max-width: 960px) {
+    .button {
+        background-color: transparent;
+    }
+
+    .icon {
+        color: #000;
+
+        .logo {
+            max-width: 140px;
+            margin: 0 auto;
+            background-color: transparent;
+
+            img {
+                background-color: transparent;
+                object-fit: scale-down;
+            }
+        }
+        svg {
+            background-color: transparent;
+        }
+    }
+}

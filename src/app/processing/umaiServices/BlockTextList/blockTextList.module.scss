@@ -1,0 +1,53 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+
+    p {
+        width: calc(91% - 16px);
+        font-weight: normal;
+        font-size: 16px;
+        color: #474A53;
+    }
+
+
+    @media(max-width: 960px) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 12px;
+        
+        p {
+            font-size: 14px;
+            width: 100%;
+        }
+    }
+}
+
+.RoundNumberImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 70px;
+    height: 70px;
+    border-radius: 99px;
+
+    font-weight: bold;
+    font-size: 46px;
+
+    background: #EDF5FF;
+    color: #1B71D7;
+
+    @media(max-width: 960px) {
+        border-radius: 12px;
+        width: 100%;
+
+        font-size: 26px;
+
+        justify-content: normal;
+
+        padding-left: 20px;
+    }
+}

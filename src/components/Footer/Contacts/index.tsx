@@ -1,14 +1,8 @@
 import Image from 'next/image';
-import React from 'react';
 
 import s from './contacts.module.scss'
 import clsx from 'clsx';
 import { Images } from '@/components/Imges';
-
-interface Icons {
-    img: string,
-    alt: string
-}
 
 const arrayIcons = [
     {img: '/icons/facebook.svg', alt: 'facebook'},

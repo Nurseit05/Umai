@@ -1,9 +1,25 @@
-import { clientApi } from "@/api/config/axios"
+import { useFetch } from "@/hook/useFetch"
 
-const ProcessingApi = {
-    getProcessData() {
-        return clientApi.get(`processing/get_processing_data/`)
+export const ProcessingApi = async () => {
+    const processingData = await useFetch({URL: 'processing/get_processing_data/'})
+
+    const bannerAPI = processingData?.banner
+    const underBannerProcessingAPI = processingData?.under_banner_processing
+    const interfacesTitleAPI = processingData?.interfaces_title
+    const advantagesAPI = processingData?.advantages
+    const processingServicesAPI = processingData?.processing_services
+    const participantsTitleAPI = processingData?.participants_title
+    const schemeTitleAPI = processingData?.scheme_title
+    const systemsTitleAPI = processingData?.systems_title
+
+    return {
+        bannerAPI,
+        underBannerProcessingAPI,
+        interfacesTitleAPI,
+        advantagesAPI,
+        participantsTitleAPI,
+        processingServicesAPI,
+        schemeTitleAPI,
+        systemsTitleAPI
     }
 }
-
-export const {getProcessData} = ProcessingApi;
