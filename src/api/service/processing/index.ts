@@ -3,6 +3,7 @@ import { useFetch } from "@/hook/useFetch"
 export const ProcessingApi = async () => {
     const processingData = await useFetch({URL: 'processing/get_processing_data/'})
 
+    const seo = processingData?.seo;
     const bannerAPI = processingData?.banner
     const underBannerProcessingAPI = processingData?.under_banner_processing
     const interfacesTitleAPI = processingData?.interfaces_title
@@ -13,6 +14,7 @@ export const ProcessingApi = async () => {
     const systemsTitleAPI = processingData?.systems_title
 
     return {
+        seo,
         bannerAPI,
         underBannerProcessingAPI,
         interfacesTitleAPI,

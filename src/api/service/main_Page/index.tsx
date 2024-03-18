@@ -1,9 +1,21 @@
-import { clientApi } from "@/api/config/axios"
+import { useFetch } from "@/hook/useFetch"
 
-const Main_PageApi = {
-    getMainPage() {
-        return clientApi.get(`mainpage/get_main/`)
+export const MainApi = async () => {
+    const mainData = await useFetch({URL: 'mainpage/get_main/'})
+
+    const seo = mainData?.seo;
+    const bannerAPI = mainData?.banners;
+    const servicesAPI = mainData?.services;
+    const additionalServicesAPI = mainData?.additional_services;
+    const updatesAPI = mainData?.updates;
+    const branchesAPI = mainData?.branches;
+    
+    return {
+        seo,
+        bannerAPI,
+        servicesAPI,
+        additionalServicesAPI,
+        updatesAPI,
+        branchesAPI
     }
 }
-
-export const {getMainPage} = Main_PageApi;
