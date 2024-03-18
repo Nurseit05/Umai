@@ -1,4 +1,4 @@
-import Icon from '@/UI/Icon';
+import Image from 'next/image';
 
 import RenderListDrop from './renderListDrop';
 
@@ -26,7 +26,7 @@ const InfoContacs = () => {
             </div>
             <div className={s.socialMedia}>
                 <div className={s.whatsAppContacts}>
-                    <Icon width={24} height={24} srcImg='/icons/whatsapp.svg' />
+                    <Image alt='' width={24} height={24} src='/icons/whatsapp.svg' />
                     <div className={s.wrapperText}>
                         <p>WhatsApp</p>
                         <span>+996 (501) 110 022</span>
@@ -35,7 +35,7 @@ const InfoContacs = () => {
                 <div className={s.socialMediaRound}>
                     {arrayIcons.map(item =>
                         <button className={s.circleDiv} key={item.img}>
-                            <Icon srcImg={item.img} width={20} height={20} alt={item.alt} />
+                            <Image src={item.img} width={20} height={20} alt={item.alt} />
                         </button>    
                     )}
                 </div>

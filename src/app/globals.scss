@@ -1,7 +1,8 @@
+@import "../shared/style/fonts.scss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'https://fonts.googleapis.com/css2?family=Inter&display=swap';
 
 :root {
   --foreground-rgb: 0, 0, 0;

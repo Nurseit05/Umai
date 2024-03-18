@@ -9,6 +9,7 @@ import { ProcessingApi } from '@/api/service/processing';
 
 import s from './processing.module.scss';
 import SchemeProcess from './schemeProcess';
+import FixedPhone from '@/components/FixedPhone';
 
 
 export const Processing = async () => {
@@ -33,6 +34,7 @@ export const Processing = async () => {
       <ParticipantsProperty data={participantsTitleAPI}/>
       <SchemeProcess data={schemeTitleAPI} />
       <TypeProcessingSistem data={systemsTitleAPI}/>
+      <FixedPhone classWrapper={s.fixedNone} booleanText={true} />
     </main>
   );
 };

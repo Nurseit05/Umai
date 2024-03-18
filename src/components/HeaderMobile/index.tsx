@@ -1,14 +1,17 @@
 
-import Icon from '@/UI/Icon'
-
 import Link from 'next/link'
 import Image from 'next/image'
 
 import BurgerButton from './burgerButton/burgerButton'
 
 import s from './headerMobile.module.scss'
+import clsx from 'clsx'
 
-const HeaderMobile = () => {
+interface Props {
+    backgroundStyle?: string
+}
+
+const HeaderMobile = ({backgroundStyle}: Props) => {
 
     return (
         <header className={s.container}>
@@ -21,18 +24,18 @@ const HeaderMobile = () => {
 
                 <div className={s.actions}>
                     <div className={s.wrapperText}>
-                        <Icon srcImg='/icons/Globe.svg' width={16} height={16} />
+                        <Image alt='' src='/icons/Globe.svg' width={16} height={16} />
                         <p>РУССКИЙ</p>
-                        <Icon srcImg='/icons/vectorDown.svg' width={14} height={14} />
+                        <Image alt='' src='/icons/vectorDown.svg' width={14} height={14} />
                     </div>
                     <BurgerButton/>
                 </div>
             </div>
 
-            <div className={s.searchMagnifying}>
+            <div className={clsx(s.searchMagnifying, backgroundStyle)}>
                 <div className={s.wrapperInput}>
                     <input type="text" placeholder='Поиск по сайту' />
-                    <Icon srcImg='/icons/search.svg' width={24} height={24} />
+                    <Image alt='' src='/icons/search.svg' width={24} height={24} />
                 </div>
             </div>
 

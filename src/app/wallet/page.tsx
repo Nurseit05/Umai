@@ -13,7 +13,7 @@ export default function Wallet() {
   return (
     <>
       <Header/>
-      <HeaderMobile/>
+      <HeaderMobile backgroundStyle={s.mobileBackground} />
       <Walletting/>
       <Footer classBacground={s.backgroundFooter} />  
       <FooterMobile classBacground={s.backgroundFooter} />

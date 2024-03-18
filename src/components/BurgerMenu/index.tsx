@@ -1,7 +1,5 @@
 import clsx from 'clsx'
 
-import Icon from '@/UI/Icon'
-
 import s from './burger-menu.module.scss'
 
 import Image from 'next/image'
@@ -35,8 +33,8 @@ const BurgerMenu = ({ isOpen, onClose }: Props) => {
                         />
 
                         <button onClick={onClose} className={s.close_btn}>
-                            <Icon width={24} height={24}
-                            srcImg={'/icons/close.svg'} className={s.close_icon} />
+                            <Image width={24} height={24} alt=''
+                            src={'/icons/close.svg'} className={s.close_icon} />
                         </button>
                     </div>
 

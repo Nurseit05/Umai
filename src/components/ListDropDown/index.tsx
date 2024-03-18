@@ -2,9 +2,8 @@ import clsx from 'clsx'
 
 import { useState } from 'react'
 
-import Icon from '@/UI/Icon'
-
 import s from './list-drop-down.module.scss'
+import Image from 'next/image'
 
 interface Props {
     title: string
@@ -36,9 +35,9 @@ const ListDropDown = ({
                 <div className={s.titleWrapper}>
                     <div className={s.title}>
                         <p>{title}</p>
-                        <Icon
+                        <Image
                             className={clsx(s.arrow, isShow && s.active)}
-                            srcImg='/icons/vectorDown.svg'
+                            src='/icons/vectorDown.svg' alt=''
                             width={20}
                             height={20}
                         />

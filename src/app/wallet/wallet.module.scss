@@ -1,0 +1,25 @@
+.container {
+    padding: 0 40px;
+
+    @media(max-width: 1440px) {
+        padding: 0px 20px;
+    }
+
+    @media(max-width: 960px) {
+        padding: 50px 20px;
+        background: #f7f7f8;
+    }
+}
+
+.mobileBackground {
+    @media(max-width: 960px) {
+        background: #f7f7f8;
+    }
+}
+
+.backgroundFooter {
+    @media(max-width: 960px) {
+        padding-top: 45px;
+        background: #f7f7f9
+    }
+}

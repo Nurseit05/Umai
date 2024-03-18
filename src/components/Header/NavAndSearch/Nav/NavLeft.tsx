@@ -8,9 +8,9 @@ import s from './nav.module.scss'
 import clsx from 'clsx';
 
 const arrayRoute = [
-    {name: 'Агрегация', href: '/'},
+    {name: 'Агрегация', href: '/aggregation'},
     {name: 'Процессинг', href: '/processing'},
-    {name: 'Кошелек', href: '/purse'},
+    {name: 'Кошелек', href: '/wallet'},
     {name: 'Терминалы', href: '/terminals'},
     {name: 'Эквайринг', href: '/acquiring'},
     {name: 'Ещё', img: '/icons/vectorDown.svg', href: '/...'}

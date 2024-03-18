@@ -1,9 +1,9 @@
-import { ProcessingSystem } from '@/api/service/processing/processType';
+import { ProcessingSystemTS } from '@/api/service/processing/processType';
 
 import s from './blockTextList.module.scss'
 import Image from 'next/image';
 
-const BlockTextList = ({ text, image }: ProcessingSystem) => {
+const BlockTextList = ({ text, image }: ProcessingSystemTS) => {
 
     return (
         <div className={s.wrapper}>

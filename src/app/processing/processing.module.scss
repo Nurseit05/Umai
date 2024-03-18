@@ -1,12 +1,22 @@
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 200px auto;
 
     @media(max-width: 960px) {
         padding: 0 20px;
     }
 }
 
-.backgroundFooter {
-    border: 1px solid #ECF0F0;
+.fixedNone {
+    width: 270px;
+    gap: 12px;
+
+    p {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    @media(max-width: 960px) {
+        width: 44px;
+    }
 }

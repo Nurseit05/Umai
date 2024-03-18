@@ -8,27 +8,25 @@ import DOMPurify from "isomorphic-dompurify";
 
 import s from './processingServices.module.scss'
 
-const ProcessingServices = ({data}: {data: ProcessingServicesTS[]}) => {
+const ProcessingServices = ({data}: {data: ProcessingServicesTS}) => {
 
-    if (!Array.isArray(data) || data.length === 0) {
+    if (!data) {
         return null;
-      }
+    }
 
     return (
         <section className={s.container} >
-            {data?.map((item) => (
-                <React.Fragment
-                    key={item.id}
-                >
-                    <Banner
-                        title={item.title}
-                        imgSrc={item.image}
-                        width={220} height={140}
-                        wrapperClass={s.wrapperBanner}
-                    />
-                    <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(item.content)}} />
-                </React.Fragment>
-            ))}
+            <React.Fragment
+                key={data.id}
+            >
+                <Banner
+                    title={data.title}
+                    imgSrc={data.image}
+                    width={220} height={140}
+                    wrapperClass={s.wrapperBanner}
+                />
+                <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(data.content)}} />
+            </React.Fragment>
         </section>
     );
 };

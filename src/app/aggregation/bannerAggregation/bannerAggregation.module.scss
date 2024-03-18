@@ -1,0 +1,30 @@
+.wrapperBanner {
+    justify-content: space-between;
+    padding-left: 95px;
+
+    @media(max-width: 960px) {
+        padding: 0;
+
+        img {
+            width: 280px;
+            height: 250px;
+            padding-bottom: 0;
+        }
+        
+        div {
+            padding: 24px 16px 0 16px;
+        }
+    }
+}
+
+.wrapperContainer {
+    h4 {
+        width: 50%;
+    }
+    @media(max-width: 960px) {
+        h4 {
+            width: 100%;
+
+        }
+    }
+}

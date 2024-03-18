@@ -15,12 +15,12 @@ export interface BannerTS {
 }
 
 export interface ServicesTS {
-    id: number;
+    id?: number | string;
     title: string;
     text: string;
     image: string;
     background: string;
-    background_mobile: string;
+    // background_mobile: string;
 }
   
 export interface AdvantagesTS {

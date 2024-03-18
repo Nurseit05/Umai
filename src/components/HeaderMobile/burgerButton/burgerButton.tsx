@@ -2,11 +2,10 @@
 
 import React, { useState } from 'react';
 
-import Icon from '@/UI/Icon';
-
 import BurgerMenu from '@/components/BurgerMenu';
 
 import s from './burgerButton.module.scss'
+import Image from 'next/image';
 
 const BurgerButton = () => {
     const [burgerOpen, setBurgerOpen] = useState(false)
@@ -22,7 +21,7 @@ const BurgerButton = () => {
     return (
         <>
             <button className={s.button} onClick={onBurgerClick}>
-                <Icon width={30} height={30} srcImg={'/icons/menu.svg'} className={s.icon} />
+                <Image alt='' width={30} height={30} src={'/icons/menu.svg'} className={s.icon} />
             </button>
 
             {<BurgerMenu isOpen={burgerOpen} onClose={closeBurger} />}

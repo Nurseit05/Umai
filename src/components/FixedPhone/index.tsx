@@ -3,10 +3,20 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import s from './fixPhone.module.scss';
+import { useMediaQuery } from '@/hook/useMediaQuery';
 
-const FixedPhone = () => {
+import s from './fixPhone.module.scss';
+import clsx from 'clsx';
+
+interface Props {
+    classWrapper?: string;
+    booleanText?: boolean | false;
+}
+
+const FixedPhone = ({classWrapper, booleanText }: Props) => {
     const [isVisible, setIsVisible] = useState(false);
+
+    const sizeDesktop = useMediaQuery()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,8 +32,21 @@ const FixedPhone = () => {
     }, []);
 
     return (
-        <div className={`${s.fixedDiv} ${isVisible ? s.visible : ''}`}>
-            <Image width={30} height={30} alt='' src='/icons/phone.svg' />
+        <div className={`${clsx(s.fixedDiv, classWrapper)} ${isVisible ? s.visible : ''}`}>
+            {sizeDesktop && booleanText ? (
+                <>
+                    <p>оставить заявку</p>
+                    <Image
+                        width={28} height={28}
+                        src='/icons/tabler_arrow-up.svg' alt=''
+                    />
+                </>
+            ) : (
+                    <Image
+                        src='/icons/phone.svg'
+                        width={29} height={29} alt=''
+                    />
+            )} 
         </div>
     );
 };

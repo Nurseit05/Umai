@@ -12,7 +12,7 @@ interface Props  {
 
 const FooterMobile = ({classBacground}: Props) => {
     return (
-        <footer className={clsx(s.container, classBacground)} >
+        <footer className={clsx(classBacground, s.container)} >
             <InfoContacs/>
             <MenuFooterRouter/>
         </footer>

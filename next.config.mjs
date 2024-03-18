@@ -4,7 +4,7 @@ const nextConfig = {
 
     images: {
         domains: [
-          '195.38.166.135'
+            '195.38.166.135'
         ],
     },    
     async rewrites() {

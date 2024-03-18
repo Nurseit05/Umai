@@ -1,0 +1,150 @@
+.container {
+    margin-top: 120px;
+    margin-bottom: 150px;
+    h3 {
+        font-weight: 600;
+        font-size: 30px;
+        color: #18191C;
+    }
+
+    @media(max-width: 960px) {
+        margin-top: 32px;
+        margin-bottom: 32px;
+
+        h3 {
+            font-size: 16px;
+        }
+    }
+}
+
+
+.wrapperText {
+    margin-top: 24px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+
+    p {
+        font-weight: normal;
+        font-size: 16px;
+        color: #474A53;
+    }
+
+    span {
+        width: calc(55% - 16px);
+
+        font-weight: normal;
+        font-size: 16px;
+        color: #474A53;
+    }
+
+    @media(max-width: 960px) {
+        margin-top: 12px;
+
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 12px;
+
+        p {
+            font-size: 14px;
+        }
+
+        span {
+            width: 100%;
+            font-size: 14px;
+        }
+        
+    }
+}
+
+.roundDivText {
+    width: calc(45% - 16px);
+    padding: 38px 20px 35px 40px;
+
+    border-radius: 24px;
+    background: #F7F7F8;
+
+    h4 {
+        font-weight: normal;
+        font-size: 18px;
+        color: #7893B0;
+    }
+
+    p {
+        font-weight: 600;
+        font-size: 26px;
+        color: #1B71D7;
+    }
+
+    @media(max-width: 960px) {
+        width: 100%;
+        padding: 11px 21px 11px 19px;
+
+        h4 {
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+.wrapperImage {
+    margin-top: 45px;
+
+    display: flex;
+    gap: 50px;
+
+    margin-left: 95px;
+
+    @media(max-width: 960px) {
+        margin: 12px 0 0 0;
+        gap: 12px;
+    }
+}
+
+.wrapperImageText {
+    p {
+        font-weight: normal;
+        font-size: 16px;
+        color: #474A53;
+    }
+
+    h5 {
+        font-weight: 600;
+        font-size: 30px;
+        color: #474A53;
+
+        margin: 35px 0 25px 0;
+    }
+
+    ul {
+        list-style-type: disc;
+        list-style-position:inside;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    li {
+        font-weight: normal;
+        font-size: 16px;
+        color: #7893B0;
+    }
+
+    @media(max-width: 960px) {
+        p {
+            font-size: 14px;
+        }
+
+        h5 {
+            font-size: 16px;
+        }
+
+        li {
+            font-size: 14px;
+        }
+    }
+}

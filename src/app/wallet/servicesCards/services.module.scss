@@ -1,0 +1,16 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    margin-top: 70px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+
+    @media(max-width: 960px) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+}

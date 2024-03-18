@@ -24,7 +24,7 @@ const InterfacesBank = async ({data}: {data: Interfaces_titleTS}) => {
         width={325} height={140}
         wrapperClass={s.wrapperBanner}    
       />
-      <h4>{data?.sub_title}</h4>
+      <h5>{data?.sub_title}</h5>
       <div className={s.wrapper}>
         {bankInterfaseBank?.map(item => 
           <BlockList

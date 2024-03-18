@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from 'next/font/local'
 import "./globals.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = localFont({
+  src: [
+    {
+      path: "../assets/fonts/Inter-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "../assets/fonts/Inter-Medium.ttf",
+      weight: "500",
+    },
+    {
+      path: "../assets/fonts/Inter-Bold.ttf",
+      weight: "700",
+    },
+  ],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
