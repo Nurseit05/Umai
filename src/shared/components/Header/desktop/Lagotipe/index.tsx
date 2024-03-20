@@ -2,9 +2,11 @@ import React from 'react';
 import LogoLeft from './LogoBusiness/logoLeft';
 import TranslationRight from './Translation/translationRight';
 
+import './style.scss'
+
 const Lagotipe = () => {
     return (
-        <div className='flex justify-between' >
+        <div className='container' >
             <LogoLeft/>
             <TranslationRight/>
         </div>

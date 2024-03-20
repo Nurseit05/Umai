@@ -1,4 +1,4 @@
-.wrapper {
+.container {
     
     button {
         color: #fff;
@@ -12,6 +12,23 @@
         line-height: 19.5px;
         padding-bottom: 10px;
     }
+}
+
+.wrapper {
+    display: flex;
+    gap: 64px;
+}
+
+.wrapperButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wrapperText {
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
 .lineDiv {

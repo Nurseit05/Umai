@@ -40,7 +40,7 @@ const BurgerMenu = ({ isOpen, onClose }: Props) => {
 
                     <div className={s.link_box}>
                         {Navigation.map(link => (
-                            <div className='flex gap-2' key={link.link}>
+                            <div className={s.wrapperItem} key={link.link}>
                                 <Image src={link.img} width={16} height={16} alt='' />
                                 <Link
                                     className={s.link}

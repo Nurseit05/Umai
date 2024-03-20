@@ -35,7 +35,7 @@ const CardsBanner = ({
                     <h5 dangerouslySetInnerHTML={{__html: cleanedHTML}}/>
                     <span>{text}</span>
                 </p>
-                {isMobile && <Image src={!isMobile ? imgSrc : mobileImage} height={200} width={200} alt='нурсеит лох' />}
+                {isMobile && <Image src={!isMobile ? imgSrc : mobileImage} height={200} width={200} alt='' />}
                 <Button round={false} className={s.button}>{button || 'Узнать подробнее'}</Button>
             </div>
             {!isMobile && <Image src={!isMobile ? imgSrc : mobileImage} height={360} width={410} alt='atm' />}

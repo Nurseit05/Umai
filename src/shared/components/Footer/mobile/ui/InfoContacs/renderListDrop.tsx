@@ -8,6 +8,8 @@ import { IMenu } from '@/types/common';
 
 import { useRouter } from 'next/navigation';
 
+import s from './infoContacts.module.scss'
+
 const RenderListDrop = () => {
 
     const navigate = useRouter();
@@ -33,7 +35,7 @@ const RenderListDrop = () => {
     return (
         <div>
             {CLIENT_LIST.map(item => renderMenuItem(item))}
-            <hr className='mt-2 mb-2' />
+            <hr className={s.marginSize} />
             {INFORMATION_LIST.map(item => renderMenuItem(item))}
         </div>
     );

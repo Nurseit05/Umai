@@ -1,15 +1,30 @@
-.containerPhoneEmail {
+.container {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    align-items: flex-start;
+    gap: 40px 0;
+}
+
+.wrapper {
+    display: flex;
+    gap: 72px;
+}
+
+.wrapperSocialNetworks {
+    display: flex;
+    gap: 20px;
+}
+
+.containerPhoneEmail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 72px;
 
     p {
         font-weight: 500;
         font-size: 10px;
         color: #838795;
     }
-    span {
+    a {
         font-weight: 400;
         font-size: 14px;
         color: #474A53;
@@ -19,20 +34,31 @@
 .circleDiv {
     width: 32px;
     height: 32px;
-    border-radius: 86.09px; 
-    padding: 6px; 
+    border-radius: 50%;
     background-color: #F1F2F3;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
 }
 
-.blueDiv {
-    background-color: #0092A1;
-    width: 24px;
-    height: 24px;
+.wrapperContacts {
+    width: 245px;
+    display: flex;
+    gap: 0px 12px;
+    align-items: flex-start;
 }
 
+.wrapperText {
+    display: flex;
+    flex-direction: column;
+    gap: 0px 4px;
+}
 
 .text {
     color: #7893B0;

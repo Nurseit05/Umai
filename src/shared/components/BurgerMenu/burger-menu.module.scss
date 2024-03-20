@@ -33,6 +33,11 @@
     height: 100%;
 }
 
+.wrapperItem {
+    display: flex;
+    gap: 8px;
+}
+
 .link_box {
     display: flex;
     flex-direction: column;

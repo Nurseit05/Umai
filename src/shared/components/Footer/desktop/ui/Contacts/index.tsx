@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import s from './contacts.module.scss'
 import clsx from 'clsx';
+import { FooterContactTS, FooterSocialTS } from '@/api/service/header_footer/headerFooter';
+import Link from 'next/link';
 
 const arrayIcons = [
     {img: '/icons/facebook.svg', alt: 'facebook'},
@@ -12,58 +14,47 @@ const arrayIcons = [
     {img: '/icons/youtube.png', alt: 'youtube'},
 ]
 
-const Contacts = () => {
+interface Props {
+    social: FooterSocialTS[];
+    contacts: FooterContactTS[];
+}
+
+const Contacts: React.FC<Props> = ({social, contacts}) => {
     return (
-        <div className='flex flex-col gap-y-10'>
-            <div className='flex gap-18'>
-                <section className='flex gap-4'>
-                    {arrayIcons.map(item =>
-                        <button className={s.circleDiv} key={item.img}>
-                            <Image src={item.img} width={20} height={20} alt={item.alt} />
-                        </button>    
+        <div className={s.container}>
+            <div className={s.wrapper}>
+                <section className={s.wrapperSocialNetworks}>
+                    {social?.map(item =>
+                        <Link href={item.path} key={item.id}
+                            className={s.circleDiv} 
+                        >
+                            <Image src={item.image} 
+                                width={20} height={20} 
+                                alt='' 
+                            />
+                        </Link>
                     )}
                 </section>
 
-                <section className={s.containerPhoneEmail}>
-                    <div className='flex gap-x-3 items-start'>
-                        <Image width={24} height={24} alt='' src='/icons/whatsapp.svg' />
-                        <div className='flex flex-col gap-y-1'>
-                            <p>WhatsApp</p>
-                            <span>+996 (501) 110 022</span>
+                <section className={s.containerPhoneEmail} >
+                    {contacts?.map(item =>
+                        <div key={item.id}
+                            className={s.wrapperContacts}
+                        >
+                            <Image
+                                width={24} height={24}
+                                src={item.image} alt=''
+                            />
+                            <div className={s.wrapperText} >
+                                <p>{item.title}</p>
+                                <Link
+                                    href={item.path}
+                                >
+                                    {item.text}
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <div className='flex gap-x-3 items-start'>
-                        <div className={clsx(s.circleDiv, s.blueDiv)}>
-                            <Image width={14} height={14} alt='' src='/icons/phone.svg' />
-                        </div>
-                        <div className='flex flex-col gap-y-1'>
-                            <p>Телефон</p>
-                            <span>+996 (774) 110 022</span>
-                            <span>+996 (501) 110 022</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section className={s.containerPhoneEmail}>
-                    <div className='flex gap-x-3 items-start'>
-                        <div className={clsx(s.circleDiv, s.blueDiv)}>
-                            <Image width={14} height={14} alt='' src='/icons/mapWhite.svg' />
-                        </div>
-                        <div className='flex flex-col gap-y-1'>
-                            <p>WhatsApp</p>
-                            <span>+996 (501) 110 022</span>
-                        </div>
-                    </div>
-                    <div className='flex gap-x-3 items-start'>
-                        <div className={clsx(s.circleDiv, s.blueDiv)}>
-                            <Image width={14} height={14} alt='' src='/icons/email.svg'/>
-                        </div>
-                        <div className='flex flex-col gap-y-1'>
-                            <p>Телефон</p>
-                            <span>+996 (774) 110 022</span>
-                            <span>+996 (501) 110 022</span>
-                        </div>
-                    </div>
+                    )}
                 </section>
             </div>
             <p className={s.text}>© 2014-2021 «BM Technologies» ltd. | <a href="">Лиц. №2005290515 от НБКР</a></p>

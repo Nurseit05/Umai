@@ -1,6 +1,6 @@
 import CardsBanner from './containers/CardsBanner';
 
-import { MainPageAll } from '@/api/service/main_Page/mainType';
+import { AdditionalServicesMainTS } from '@/api/service/main_Page/mainType';
 
 import { useFetch } from '@/hook/useFetch';
 
@@ -18,7 +18,7 @@ const BannerCard = async () => {
 
     return (
         <div className={s.container}>
-                {additionalServices?.map((item: MainPageAll, index: number) => 
+                {additionalServices?.map((item: AdditionalServicesMainTS, index: number) => 
                     <CardsBanner
                         key={index}
                         title={item.title}

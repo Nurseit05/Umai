@@ -6,10 +6,10 @@ import s from './SearchButton.module.scss'
 
 const SearchButton = () => {
     return (
-        <div className={s.wrapper} >
+        <div className={s.container} >
             <h2>Поиск по сайту</h2>
-            <div className='flex gap-x-14' >
-                <section className='flex items-center gap-x-2' >
+            <div className={s.wrapper} >
+                <section className={s.wrapperButton} >
                     <div className={s.round} >
                         <Image
                             src='/icons/search.svg'
@@ -20,7 +20,7 @@ const SearchButton = () => {
                     <Button>Найти</Button>
                 </section>
                     
-                <section className='flex items-center gap-x-6'>
+                <section className={s.wrapperText}>
                     <p>Карьера (вакансии)</p>
                     <div className={s.lineDiv} ></div>
                     <p>Контакты</p>

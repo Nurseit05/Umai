@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import '../style.scss';
+import s from './translationRight.module.scss'
 
 const translationItems = [
     { src: '/icons/file.svg', alt: 'file', text: 'ОФФЕРТА' },
@@ -13,18 +13,18 @@ const translationItems = [
 
 const TranslationRight = () => {
     return (
-        <ul className='flex items-center gap-8'>
+        <ul className={s.container}>
             {translationItems.map((item, index) => (
-                <li key={index} className='flex gap-2'>
+                <li key={index} className={s.wrapper}>
                     <Image
                         src={item.src}
                         alt={item.alt}
-                        className='w-6 h-6'
+                        className={s.imageSize}
                         width={24}
                         height={24}
                     />
                     {index === 3 ? (
-                        <Link href='' className='flex gap-2'>
+                        <Link href='' className={s.wrapper}>
                             <div>{item.text}</div>
                             <Image src='/icons/vectorDown.svg' alt='' width={11} height={11} />
                         </Link>

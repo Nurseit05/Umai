@@ -26,7 +26,7 @@ const NavLeft = () => {
                 <Link 
                     key={item.href}
                     href={item.href}
-                    className={clsx(pathname === item.href ? s.colorActive : '', item.img ? 'flex gap-2' : '')}
+                    className={clsx(pathname === item.href ? s.colorActive : '', item.img ? s.wrapper : '')}
                 >
                     {item.name}
                     {item.img ? <Image src={item.img} width={11} height={11} alt=''/> : ''}

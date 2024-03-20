@@ -16,32 +16,22 @@ import React from 'react';
 /* =========================================================================
 * UI
 * ========================================================================= */
-import FooterDesktop from './desktop';
-import FooterMobile from './mobile';
-
-/* =========================================================================
-* API TS
-* ========================================================================= */
-import { FooterContactTS, FooterSocialTS } from '@/api/service/header_footer/headerFooter';
+import HeaderDesktop  from './desktop';
+import HeaderMobile from './mobile';
 
 
-interface Props {
-    social: FooterSocialTS[];
-    contacts: FooterContactTS[];
-}
-
-const Footer: React.FC<Props> = ({social, contacts}) => {
+const Header: React.FC = () => {
 
     const { isMobile } = useSizeByHeaders(headers())
     
     return (
         <>
             {!isMobile 
-            ? <FooterDesktop social={social} contacts={contacts} />
-            : <FooterMobile  />
+            ? <HeaderDesktop />
+            : <HeaderMobile  />
             }
         </>
     );
 };
 
-export default Footer;
+export default Header;

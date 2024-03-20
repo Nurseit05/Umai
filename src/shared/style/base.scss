@@ -1,8 +1,24 @@
 @import "fonts.scss";
+@import "colors.scss";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100dvh;
+  position: relative;
+  background-color: var(--light-gray-3);
+  &.white {
+    background-color: var(--white);
+  }
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;

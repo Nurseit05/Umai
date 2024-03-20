@@ -1,9 +1,9 @@
 import { AcquiringAPI } from '@/api/service/acquiring_Page';
 
-import BannerAcquirin from './bannerAcquiring';
-import InternetAcquiring from './internetAcquiring';
-import AdvantagesTitleAcquiring from './advantagesTitleAcquiring';
-import PossiblitesAcquiring from './possiblitesAcquiring';
+import BannerAcquirin from './ui/bannerAcquiring';
+import InternetAcquiring from './ui/internetAcquiring';
+import AdvantagesTitleAcquiring from './ui/advantagesTitleAcquiring';
+import PossiblitesAcquiring from './ui/possiblitesAcquiring';
 
 import s from './main.module.scss'
 

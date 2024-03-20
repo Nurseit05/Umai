@@ -4,16 +4,16 @@ import NavSearch from './NavAndSearch';
 
 import s from './header.module.scss'
 
-const Header = () => {
+const HeaderDesktop = () => {
     return (
         <header className={s.container} >
             <div className={s.wrapper}>
                 <Lagotipe/>
-                <hr className='mt-4 mb-4' />
+                <hr className={s.marginSize} />
                 <NavSearch/>
             </div>
         </header>
     );
 };
 
-export default Header;
+export default HeaderDesktop;

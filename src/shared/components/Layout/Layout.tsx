@@ -8,7 +8,7 @@ import React from "react"
 * ========================================================================= */
 import localFont from 'next/font/local'
 
-/* =========================================================================
+/* ========================================================================
 * LIBS
 * ========================================================================= */
 import clsx from "clsx";
@@ -17,6 +17,14 @@ import clsx from "clsx";
 * SHARED
 * ========================================================================= */
 import Footer from "@/shared/components/Footer";
+import Header from "@/shared/components/Header";
+
+/* =========================================================================
+* API
+* ========================================================================= */
+import { HeaderFooterAPI } from "@/api/service/header_footer";
+import { FooterContactTS, FooterSocialTS } from "@/api/service/header_footer/headerFooter";
+
 
 const inter = localFont({
   src: [
@@ -41,12 +49,20 @@ interface Props {
 }
 
 export const Layout: React.FC<Props> = async ({ children, color}) => {
+  const { footerContacts, footerSocial}: {
+    footerContacts: FooterContactTS[];
+    footerSocial: FooterSocialTS[];
+  } = await HeaderFooterAPI()
 
   return (
     <html lang="en">
       <body className={clsx(inter.className, color)} suppressHydrationWarning>
+        <Header/>
         {children}
-        <Footer/>
+        <Footer
+          social={footerSocial}
+          contacts={footerContacts}
+        />
       </body>
     </html>
   )

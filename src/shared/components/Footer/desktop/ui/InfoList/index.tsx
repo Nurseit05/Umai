@@ -28,7 +28,7 @@ const arrayList = [
 
 const InfoList = () => {
   return (
-    <div className='flex gap-x-20'>
+    <div className={s.container}>
       {arrayList.map((item) => (
         <section key={item.title} className={s.wrapper}>
           <div className={s.text}>
