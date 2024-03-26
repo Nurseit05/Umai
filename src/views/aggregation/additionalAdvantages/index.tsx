@@ -2,7 +2,7 @@ import { additionalAdvantagesAggregationTS } from '@/api/service/aggregation_Pag
 import Image from 'next/image';
 
 import s from './additionalAdvantages.module.scss'
-import { useSizeByHeaders } from '@/hook/useSizeMobile';
+import { useSizeByHeaders } from '@/shared/hook/useSizeMobile';
 import { headers } from 'next/headers';
 
 const AdditionalAdvantages = ({data}: {data: additionalAdvantagesAggregationTS}) => {

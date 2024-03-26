@@ -1,4 +1,4 @@
-import { useFetch } from "@/hook/useFetch"
+import { useFetch } from "@/shared/hook/useFetch"
 
 export const ProcessingApi = async () => {
     const processingData = await useFetch({URL: 'processing/get_processing_data/'})

@@ -2,7 +2,7 @@ import CardsBanner from './containers/CardsBanner';
 
 import { AdditionalServicesMainTS } from '@/api/service/main_Page/mainType';
 
-import { useFetch } from '@/hook/useFetch';
+import { useFetch } from '@/shared/hook/useFetch';
 
 import s from './bannerCards.module.scss'
 

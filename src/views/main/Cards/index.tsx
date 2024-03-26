@@ -1,6 +1,6 @@
 import CardsDefault from '@/shared/components/CardsDefault';
 
-import { useFetch } from '@/hook/useFetch';
+import { useFetch } from '@/shared/hook/useFetch';
 
 import { ServicesMainTS } from '@/api/service/main_Page/mainType';
 

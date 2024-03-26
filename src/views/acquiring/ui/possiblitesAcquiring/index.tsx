@@ -4,7 +4,7 @@ import DOMPurify from 'isomorphic-dompurify';
 import Image from 'next/image';
 import { headers } from 'next/headers';
 
-import { useSizeByHeaders } from '@/hook/useSizeMobile';
+import { useSizeByHeaders } from '@/shared/hook/useSizeMobile';
 
 import s from './possiblitesAcquiring.module.scss'
 

@@ -1,4 +1,4 @@
-import { useFetch } from "@/hook/useFetch"
+import { useFetch } from "@/shared/hook/useFetch"
 
 export const MainApi = async () => {
     const mainData = await useFetch({URL: 'mainpage/get_main/'})

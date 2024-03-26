@@ -6,7 +6,7 @@ import s from './forAdvertisers.module.scss'
 import Image from 'next/image';
 import { headers } from 'next/headers';
 
-import { useSizeByHeaders } from '@/hook/useSizeMobile';
+import { useSizeByHeaders } from '@/shared/hook/useSizeMobile';
      
 interface Props {
     forAdver: forAdvertisersAggregationTS;

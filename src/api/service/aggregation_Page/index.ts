@@ -1,4 +1,4 @@
-import { useFetch } from "@/hook/useFetch"
+import { useFetch } from "@/shared/hook/useFetch"
 
 export const AggregationAPI = async () => {
     const aggregationData = await useFetch({URL: 'aggregation/get_aggregation/'})

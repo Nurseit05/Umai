@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import s from './cardsDefault.module.scss'
 import { headers } from 'next/headers';
-import { useSizeByHeaders } from '@/hook/useSizeMobile';
+import { useSizeByHeaders } from '@/shared/hook/useSizeMobile';
 
 interface Props  {
     title: string, 

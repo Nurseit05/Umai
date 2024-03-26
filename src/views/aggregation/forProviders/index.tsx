@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import s from './forProviders.module.scss'
-import { useSizeByHeaders } from '@/hook/useSizeMobile';
+import { useSizeByHeaders } from '@/shared/hook/useSizeMobile';
 import { headers } from 'next/headers';
 
 const ForProviders = ({data}: {data: forProvidersAggregationTS}) => {

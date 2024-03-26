@@ -2,7 +2,7 @@ import { BannerTS } from '@/api/service/wallet_Page/walletType';
 
 import Button from '@/shared/components/Button';
 
-import { useSizeByHeaders } from '@/hook/useSizeMobile';
+import { useSizeByHeaders } from '@/shared/hook/useSizeMobile';
 
 import { headers } from 'next/headers';
 import Image from 'next/image';

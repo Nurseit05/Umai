@@ -1,7 +1,7 @@
 import CardText from './containers/CardText';
 import CardsDefault from '@/shared/components/CardsDefault';
 
-import { useFetch } from '@/hook/useFetch';
+import { useFetch } from '@/shared/hook/useFetch';
 
 import s from './map.module.scss'
 

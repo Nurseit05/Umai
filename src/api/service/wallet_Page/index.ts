@@ -1,4 +1,4 @@
-import { useFetch } from "@/hook/useFetch"
+import { useFetch } from "@/shared/hook/useFetch"
 
 export const WalletAPI = async () => {
     const walletData = await useFetch({URL: 'wallet/get_wallet_data/'})

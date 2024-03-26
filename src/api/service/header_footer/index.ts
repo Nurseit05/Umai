@@ -1,4 +1,4 @@
-import { useFetch } from "@/hook/useFetch"
+import { useFetch } from "@/shared/hook/useFetch"
 
 export const HeaderFooterAPI = async () => {
     const headerFooterData = await useFetch({URL: 'header_footer/get_header_footer/'})

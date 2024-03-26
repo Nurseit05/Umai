@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import s from './Banner.module.scss'
 import clsx from 'clsx';
-import { useSizeByHeaders } from '@/hook/useSizeMobile';
+import { useSizeByHeaders } from '@/shared/hook/useSizeMobile';
 import { headers } from 'next/headers';
 
 interface Props {

@@ -6,7 +6,7 @@ import Button from '@/shared/components/Button';
 
 import s from './cardsBanner.module.scss'
 import { headers } from 'next/headers';
-import { useSizeByHeaders } from '@/hook/useSizeMobile';
+import { useSizeByHeaders } from '@/shared/hook/useSizeMobile';
 
 interface Props  {
     title: string,

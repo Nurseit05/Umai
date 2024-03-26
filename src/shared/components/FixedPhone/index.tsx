@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import { useMediaQuery } from '@/hook/useMediaQuery';
+import { useMediaQuery } from '@/shared/hook/useMediaQuery';
 
 import s from './fixPhone.module.scss';
 import clsx from 'clsx';
